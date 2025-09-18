@@ -1,0 +1,936 @@
+[0m17:44:21.386155 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11a8a2c30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11be69dc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11be69940>]}
+
+
+============================== 17:44:21.397142 | 4289fe9f-39b6-4527-97c4-b35eb07eb2f3 ==============================
+[0m17:44:21.397142 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:44:21.397646 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target fabric', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:44:21.402114 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m17:44:21.402528 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m17:44:21.452473 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.17993684, "process_user_time": 0.946927, "process_kernel_time": 0.339755, "process_mem_max_rss": "98189312", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:44:21.453172 [debug] [MainThread]: Command `dbt run` failed at 17:44:21.453084 after 0.18 seconds
+[0m17:44:21.453506 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11be69c70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11af01b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11af67bc0>]}
+[0m17:44:21.453827 [debug] [MainThread]: Flushing usage events
+[0m17:47:21.983383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109241070>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10919b2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109365b50>]}
+
+
+============================== 17:47:21.986020 | d2f1a6d8-6313-49c4-b483-52439923b961 ==============================
+[0m17:47:21.986020 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:47:21.986302 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/Users/karelgoense/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --target fabric', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m17:47:21.987797 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Could not find profile named 'mvp_profile'
+[0m17:47:21.989490 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.035959125, "process_user_time": 0.485558, "process_kernel_time": 0.096079, "process_mem_max_rss": "98140160", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:47:21.989794 [debug] [MainThread]: Command `dbt run` failed at 17:47:21.989750 after 0.04 seconds
+[0m17:47:21.989963 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109241310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1091c3f80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109367ec0>]}
+[0m17:47:21.990121 [debug] [MainThread]: Flushing usage events
+[0m17:47:32.129254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1047e54f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e4ddc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e4d970>]}
+
+
+============================== 17:47:32.131184 | feee9d6c-77a2-4033-ba7d-f4c3e0cce5c2 ==============================
+[0m17:47:32.131184 [info ] [MainThread]: Running with dbt=1.8.7
+[0m17:47:32.131492 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --target fabric', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m17:47:32.134072 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m17:47:32.134323 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m17:47:32.135495 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.034243915, "process_user_time": 0.496002, "process_kernel_time": 0.098247, "process_mem_max_rss": "97943552", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m17:47:32.135741 [debug] [MainThread]: Command `dbt run` failed at 17:47:32.135703 after 0.03 seconds
+[0m17:47:32.135925 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e4ddc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e4f800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104e4daf0>]}
+[0m17:47:32.136089 [debug] [MainThread]: Flushing usage events
+[0m07:49:56.034654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10821bd70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109861ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098617c0>]}
+
+
+============================== 07:49:56.037518 | 70696692-e04a-4df8-8fdb-df8649f9a142 ==============================
+[0m07:49:56.037518 [info ] [MainThread]: Running with dbt=1.8.7
+[0m07:49:56.037836 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --target fabric', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:49:56.040379 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m07:49:56.040624 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m07:49:56.042270 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.039410625, "process_user_time": 0.562481, "process_kernel_time": 0.164755, "process_mem_max_rss": "95993856", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:49:56.042581 [debug] [MainThread]: Command `dbt run` failed at 07:49:56.042529 after 0.04 seconds
+[0m07:49:56.042759 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109861ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1096fd7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109814f20>]}
+[0m07:49:56.042925 [debug] [MainThread]: Flushing usage events
+[0m07:50:59.840281 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10780e420>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b061d00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b061880>]}
+
+
+============================== 07:50:59.842289 | 374d0b7a-14ec-466c-9290-37535ca5939c ==============================
+[0m07:50:59.842289 [info ] [MainThread]: Running with dbt=1.8.7
+[0m07:50:59.842594 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'version_check': 'True', 'profiles_dir': '/Users/karelgoense/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run --target fabric', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m07:50:59.845443 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m07:50:59.845772 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m07:50:59.847277 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.03540471, "process_user_time": 0.508132, "process_kernel_time": 0.098428, "process_mem_max_rss": "97665024", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:50:59.847711 [debug] [MainThread]: Command `dbt run` failed at 07:50:59.847644 after 0.04 seconds
+[0m07:50:59.847902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b061b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aefd7f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aec0dd0>]}
+[0m07:50:59.848102 [debug] [MainThread]: Flushing usage events
+[0m07:52:49.253309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2f3410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b966060>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b965bb0>]}
+
+
+============================== 07:52:49.262969 | bb54abae-9cbc-4e73-be3c-6ac12b14e9fc ==============================
+[0m07:52:49.262969 [info ] [MainThread]: Running with dbt=1.8.7
+[0m07:52:49.263326 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt run --target fabric', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:52:49.266601 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m07:52:49.266892 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m07:52:49.296866 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.101688206, "process_user_time": 0.662746, "process_kernel_time": 0.179954, "process_mem_max_rss": "97402880", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:52:49.297377 [debug] [MainThread]: Command `dbt run` failed at 07:52:49.297316 after 0.10 seconds
+[0m07:52:49.297603 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109212000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b911220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b967e00>]}
+[0m07:52:49.297802 [debug] [MainThread]: Flushing usage events
+[0m07:53:36.073692 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078d5eb0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f2de20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f2d970>]}
+
+
+============================== 07:53:36.075668 | 910a1e42-c28d-4567-ab7d-cdbf12de08c8 ==============================
+[0m07:53:36.075668 [info ] [MainThread]: Running with dbt=1.8.7
+[0m07:53:36.075973 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --target fabric', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m07:53:36.078518 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m07:53:36.078781 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m07:53:36.079967 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.03324608, "process_user_time": 0.489995, "process_kernel_time": 0.098474, "process_mem_max_rss": "97959936", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:53:36.080209 [debug] [MainThread]: Command `dbt run` failed at 07:53:36.080170 after 0.03 seconds
+[0m07:53:36.080361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107f09340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107ed8fe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107a82f00>]}
+[0m07:53:36.080508 [debug] [MainThread]: Flushing usage events
+[0m07:54:03.416602 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089bc2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094c39e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094c3350>]}
+
+
+============================== 07:54:03.423716 | 7a0278a9-18fd-406e-8d7e-3ddcceb56e0c ==============================
+[0m07:54:03.423716 [info ] [MainThread]: Running with dbt=1.8.3
+[0m07:54:03.424046 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run --target fabric', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:54:04.726943 [error] [MainThread]: Encountered an error:
+cannot import name 'get_pyodbc_attrs_before' from 'dbt.adapters.fabric.fabric_connection_manager' (/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/fabric/fabric_connection_manager.py)
+[0m07:54:04.732655 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 215, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/__init__.py", line 3, in <module>
+    from dbt.adapters.sqlserver.sqlserver_adapter import SQLServerAdapter
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/sqlserver_adapter.py", line 9, in <module>
+    from dbt.adapters.sqlserver.sqlserver_connections import SQLServerConnectionManager
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/sqlserver_connections.py", line 11, in <module>
+    from dbt.adapters.fabric.fabric_connection_manager import (
+ImportError: cannot import name 'get_pyodbc_attrs_before' from 'dbt.adapters.fabric.fabric_connection_manager' (/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/fabric/fabric_connection_manager.py)
+
+[0m07:54:04.895463 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.516532, "process_user_time": 0.764397, "process_kernel_time": 0.356496, "process_mem_max_rss": "114655232", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:54:04.896021 [debug] [MainThread]: Command `dbt run` failed at 07:54:04.895950 after 1.52 seconds
+[0m07:54:04.896272 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089bc2c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a5a0e90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094ef710>]}
+[0m07:54:04.896516 [debug] [MainThread]: Flushing usage events
+[0m07:54:54.321498 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10590e330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100866d50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d5dd60>]}
+
+
+============================== 07:54:54.323350 | 6dae659c-0dd1-45dd-a247-3aad9c6ce854 ==============================
+[0m07:54:54.323350 [info ] [MainThread]: Running with dbt=1.8.3
+[0m07:54:54.323627 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run --target fabric', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:54:54.439812 [error] [MainThread]: Encountered an error:
+cannot import name 'get_pyodbc_attrs_before' from 'dbt.adapters.fabric.fabric_connection_manager' (/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/fabric/fabric_connection_manager.py)
+[0m07:54:54.441398 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 215, in wrapper
+    profile = load_profile(flags.PROJECT_DIR, flags.VARS, flags.PROFILE, flags.TARGET, threads)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 369, in from_raw_profiles
+    return cls.from_raw_profile_info(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 325, in from_raw_profile_info
+    credentials: Credentials = cls._credentials_from_profile(
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/config/profile.py", line 149, in _credentials_from_profile
+    cls = load_plugin(typename)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 999, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/__init__.py", line 3, in <module>
+    from dbt.adapters.sqlserver.sqlserver_adapter import SQLServerAdapter
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/sqlserver_adapter.py", line 9, in <module>
+    from dbt.adapters.sqlserver.sqlserver_connections import SQLServerConnectionManager
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/sqlserver/sqlserver_connections.py", line 11, in <module>
+    from dbt.adapters.fabric.fabric_connection_manager import (
+ImportError: cannot import name 'get_pyodbc_attrs_before' from 'dbt.adapters.fabric.fabric_connection_manager' (/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/fabric/fabric_connection_manager.py)
+
+[0m07:54:54.442954 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.1498098, "process_user_time": 0.503921, "process_kernel_time": 0.127995, "process_mem_max_rss": "112164864", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:54:54.443291 [debug] [MainThread]: Command `dbt run` failed at 07:54:54.443244 after 0.15 seconds
+[0m07:54:54.443441 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10590e330>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1008b78c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1061c5400>]}
+[0m07:54:54.443595 [debug] [MainThread]: Flushing usage events
+[0m07:55:12.159192 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d92f30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107119a60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106d62d80>]}
+
+
+============================== 07:55:12.161094 | 03879646-d677-4885-833c-dc52d8cd7bcc ==============================
+[0m07:55:12.161094 [info ] [MainThread]: Running with dbt=1.8.3
+[0m07:55:12.161383 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --target fabric', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:55:12.163786 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.sqlserver'
+[0m07:55:12.164018 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "fabric" invalid: Runtime Error
+    Could not find adapter type sqlserver!
+[0m07:55:12.165376 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.032241914, "process_user_time": 0.459324, "process_kernel_time": 0.09541, "process_mem_max_rss": "96452608", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:55:12.165590 [debug] [MainThread]: Command `dbt run` failed at 07:55:12.165547 after 0.03 seconds
+[0m07:55:12.165746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106f32de0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1062a5880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1072b35f0>]}
+[0m07:55:12.165885 [debug] [MainThread]: Flushing usage events
+[0m07:55:28.604309 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106885160>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106572a50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f7c740>]}
+
+
+============================== 07:55:28.606352 | 636bdd58-6e3b-4187-81a7-bb4244b72057 ==============================
+[0m07:55:28.606352 [info ] [MainThread]: Running with dbt=1.8.3
+[0m07:55:28.606668 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --target fabric', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m07:55:28.913011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1071d66c0>]}
+[0m07:55:28.931944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f7dd00>]}
+[0m07:55:28.932295 [info ] [MainThread]: Registered adapter: fabric=1.9.6
+[0m07:55:29.137326 [debug] [MainThread]: checksum: 21b94032947768c228b3c8dcad8c882fced188ecd223f8fa4ce59a6f9d754bfa, vars: {}, profile: , target: fabric, version: 1.8.3
+[0m07:55:29.139070 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m07:55:29.139337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059779e0>]}
+[0m07:55:29.655474 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104ce2f00>]}
+[0m07:55:29.691726 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1073b2150>]}
+[0m07:55:29.691958 [info ] [MainThread]: Found 1 model, 1 seed, 455 macros
+[0m07:55:29.692114 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '636bdd58-6e3b-4187-81a7-bb4244b72057', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107358650>]}
+[0m07:55:29.692741 [info ] [MainThread]: 
+[0m07:55:29.692973 [debug] [MainThread]: Acquiring new fabric connection 'master'
+[0m07:55:29.693322 [debug] [ThreadPool]: Acquiring new fabric connection 'list_bronze_sales'
+[0m07:55:29.699415 [debug] [ThreadPool]: dbt-fabric
+[0m07:55:29.699604 [debug] [ThreadPool]: Using fabric connection "list_bronze_sales"
+[0m07:55:29.699730 [debug] [ThreadPool]: On list_bronze_sales: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales"} */
+USE [bronze_sales];
+    select  name as [schema]
+    from sys.schemas  
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m07:55:29.699848 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:55:29.699980 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.9.6;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m07:55:31.227094 [debug] [ThreadPool]: fabric adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales"} */
+USE [bronze_sales];
+    select  name as [schema]
+    from sys.schemas  
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m07:55:31.227431 [debug] [ThreadPool]: fabric adapter: Rolling back transaction.
+[0m07:55:31.227635 [debug] [ThreadPool]: On list_bronze_sales: No close available on handle
+[0m07:55:31.227843 [debug] [ThreadPool]: fabric adapter: Error running SQL: macro list_schemas
+[0m07:55:31.228015 [debug] [ThreadPool]: fabric adapter: Rolling back transaction.
+[0m07:55:31.228467 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:55:31.228710 [debug] [MainThread]: Connection 'list_bronze_sales' was properly closed.
+[0m07:55:31.228900 [info ] [MainThread]: 
+[0m07:55:31.229105 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 1.54 seconds (1.54s).
+[0m07:55:31.229376 [error] [MainThread]: Encountered an error:
+Database Error
+  ('28000', '[28000] [Microsoft][ODBC Driver 18 for SQL Server][SQL Server]Could not login because the authentication failed. (18456) (SQLDriverConnect)')
+[0m07:55:31.231322 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 2.6546848, "process_user_time": 1.127608, "process_kernel_time": 0.194162, "process_mem_max_rss": "133513216", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:55:31.231672 [debug] [MainThread]: Command `dbt run` failed at 07:55:31.231621 after 2.66 seconds
+[0m07:55:31.231885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a11b20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1075829c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107370b90>]}
+[0m07:55:31.232098 [debug] [MainThread]: Flushing usage events
+[0m07:58:59.529946 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087732c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1085b5a00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084b8380>]}
+
+
+============================== 07:58:59.533366 | e3e7377c-8954-4b51-8517-5a4d74fca9c6 ==============================
+[0m07:58:59.533366 [info ] [MainThread]: Running with dbt=1.8.3
+[0m07:58:59.533728 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --target fabric', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m07:58:59.759612 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a28f650>]}
+[0m07:58:59.781077 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2e1670>]}
+[0m07:58:59.781577 [info ] [MainThread]: Registered adapter: fabric=1.9.6
+[0m07:58:59.792477 [debug] [MainThread]: checksum: 21b94032947768c228b3c8dcad8c882fced188ecd223f8fa4ce59a6f9d754bfa, vars: {}, profile: , target: fabric, version: 1.8.3
+[0m07:58:59.951509 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:58:59.951803 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:58:59.970126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b8c1d90>]}
+[0m07:59:00.037953 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bd8bc20>]}
+[0m07:59:00.038264 [info ] [MainThread]: Found 1 model, 1 seed, 455 macros
+[0m07:59:00.038484 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a26a780>]}
+[0m07:59:00.039311 [info ] [MainThread]: 
+[0m07:59:00.039569 [debug] [MainThread]: Acquiring new fabric connection 'master'
+[0m07:59:00.040005 [debug] [ThreadPool]: Acquiring new fabric connection 'list_bronze_sales'
+[0m07:59:00.048081 [debug] [ThreadPool]: dbt-fabric
+[0m07:59:00.048295 [debug] [ThreadPool]: Using fabric connection "list_bronze_sales"
+[0m07:59:00.048429 [debug] [ThreadPool]: On list_bronze_sales: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales"} */
+USE [bronze_sales];
+    select  name as [schema]
+    from sys.schemas  
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m07:59:00.048553 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:59:00.048714 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.9.6;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m07:59:01.035805 [debug] [ThreadPool]: fabric adapter: Connected to db: bronze_sales
+[0m07:59:01.060915 [debug] [ThreadPool]: SQL status: OK in 1.0 seconds
+[0m07:59:01.065579 [debug] [ThreadPool]: On list_bronze_sales: Close
+[0m07:59:01.072261 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_bronze_sales, now list_bronze_sales_dbo)
+[0m07:59:01.079469 [debug] [ThreadPool]: dbt-fabric
+[0m07:59:01.080116 [debug] [ThreadPool]: Using fabric connection "list_bronze_sales_dbo"
+[0m07:59:01.080395 [debug] [ThreadPool]: On list_bronze_sales_dbo: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales_dbo"} */
+USE [bronze_sales];
+    with base as (
+      select
+        DB_NAME() as [database],
+        t.name as [name],
+        SCHEMA_NAME(t.schema_id) as [schema],
+        'table' as table_type
+      from sys.tables as t 
+      union all
+      select
+        DB_NAME() as [database],
+        v.name as [name],
+        SCHEMA_NAME(v.schema_id) as [schema],
+        'view' as table_type
+      from sys.views as v 
+    )
+    select * from base
+    where [schema] like 'dbo'
+    
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m07:59:01.080662 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m07:59:01.080937 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.9.6;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m07:59:01.081253 [debug] [ThreadPool]: fabric adapter: Connected to db: bronze_sales
+[0m07:59:01.154894 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m07:59:01.159073 [debug] [ThreadPool]: On list_bronze_sales_dbo: ROLLBACK
+[0m07:59:01.159690 [debug] [ThreadPool]: On list_bronze_sales_dbo: Close
+[0m07:59:01.161355 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a305e20>]}
+[0m07:59:01.162133 [debug] [MainThread]: On master: COMMIT
+[0m07:59:01.162807 [info ] [MainThread]: Concurrency: 4 threads (target='fabric')
+[0m07:59:01.163278 [info ] [MainThread]: 
+[0m07:59:01.171786 [debug] [Thread-1 (]: Began running node model.mvp_dbt_project.example
+[0m07:59:01.172637 [info ] [Thread-1 (]: 1 of 1 START sql view model dbo.example ........................................ [RUN]
+[0m07:59:01.173226 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_bronze_sales_dbo, now model.mvp_dbt_project.example)
+[0m07:59:01.173589 [debug] [Thread-1 (]: Began compiling node model.mvp_dbt_project.example
+[0m07:59:01.180599 [debug] [Thread-1 (]: Writing injected SQL for node "model.mvp_dbt_project.example"
+[0m07:59:01.181842 [debug] [Thread-1 (]: Began executing node model.mvp_dbt_project.example
+[0m07:59:01.199412 [debug] [Thread-1 (]: Writing runtime sql for node "model.mvp_dbt_project.example"
+[0m07:59:01.200424 [debug] [Thread-1 (]: Using fabric connection "model.mvp_dbt_project.example"
+[0m07:59:01.200670 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "mvp_profile", "target_name": "fabric", "node_id": "model.mvp_dbt_project.example"} */
+USE [bronze_sales];
+    
+    
+
+    EXEC('create view "dbo"."example" as -- Example dbt model
+select 1 as id, ''hello_dbt'' as message;');
+
+
+
+[0m07:59:01.200872 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m07:59:01.201118 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;Pooling=true;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.9.6;ConnectRetryCount=3;ConnectRetryInterval=10
+[0m07:59:01.201399 [debug] [Thread-1 (]: fabric adapter: Connected to db: bronze_sales
+[0m07:59:01.331914 [debug] [Thread-1 (]: SQL status: OK in 0.0 seconds
+[0m07:59:01.352278 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: COMMIT
+[0m07:59:01.353212 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: Close
+[0m07:59:01.353825 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e3e7377c-8954-4b51-8517-5a4d74fca9c6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106a193a0>]}
+[0m07:59:01.354126 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbo.example ................................... [[32mOK[0m in 0.18s]
+[0m07:59:01.354414 [debug] [Thread-1 (]: Finished running node model.mvp_dbt_project.example
+[0m07:59:01.355170 [debug] [MainThread]: On master: COMMIT
+[0m07:59:01.355370 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m07:59:01.355490 [debug] [MainThread]: Connection 'model.mvp_dbt_project.example' was properly closed.
+[0m07:59:01.355614 [info ] [MainThread]: 
+[0m07:59:01.355751 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.32 seconds (1.32s).
+[0m07:59:01.356037 [debug] [MainThread]: Command end result
+[0m07:59:01.373585 [info ] [MainThread]: 
+[0m07:59:01.373860 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m07:59:01.374016 [info ] [MainThread]: 
+[0m07:59:01.374181 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m07:59:01.377055 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.8821954, "process_user_time": 0.867575, "process_kernel_time": 0.233559, "process_mem_max_rss": "134692864", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m07:59:01.377389 [debug] [MainThread]: Command `dbt run` succeeded at 07:59:01.377346 after 1.88 seconds
+[0m07:59:01.377605 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a2b32c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108772600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1087701a0>]}
+[0m07:59:01.377762 [debug] [MainThread]: Flushing usage events
+[0m08:07:38.728870 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10438c1d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104aae8a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104aae7e0>]}
+
+
+============================== 08:07:38.731313 | b9ec4c42-cf85-47f0-a9af-29a6e403100b ==============================
+[0m08:07:38.731313 [info ] [MainThread]: Running with dbt=1.8.3
+[0m08:07:38.731581 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run --target databricks', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m08:07:38.813017 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m08:07:38.813274 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m08:07:38.813407 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m08:07:51.483844 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102fda390>]}
+[0m08:07:51.501875 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10315a960>]}
+[0m08:07:51.502201 [info ] [MainThread]: Registered adapter: databricks=1.8.3
+[0m08:07:51.518326 [debug] [MainThread]: checksum: e3811b42cec9490f76746ed369a895d8bb968af4d7449b96a0b11048fed65dab, vars: {}, profile: , target: databricks, version: 1.8.3
+[0m08:07:51.550681 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m08:07:51.551037 [debug] [MainThread]: previous checksum: e3811b42cec9490f76746ed369a895d8bb968af4d7449b96a0b11048fed65dab, current checksum: 21b94032947768c228b3c8dcad8c882fced188ecd223f8fa4ce59a6f9d754bfa
+[0m08:07:51.551217 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m08:07:51.551371 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m08:07:51.551536 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104307860>]}
+[0m08:07:52.178027 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1418de7b0>]}
+[0m08:07:52.217177 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141d5d400>]}
+[0m08:07:52.217394 [info ] [MainThread]: Found 1 model, 1 seed, 585 macros
+[0m08:07:52.217539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b9ec4c42-cf85-47f0-a9af-29a6e403100b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x141c440b0>]}
+[0m08:07:52.218212 [info ] [MainThread]: 
+[0m08:07:52.218499 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=5399326464, session-id=None, name=master, idle-time=0s, acquire-count=0, language=None, thread-identifier=(30362, 8315871424), compute-name=) - Creating connection
+[0m08:07:52.218639 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m08:07:52.218772 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=5399326464, session-id=None, name=master, idle-time=1.1920928955078125e-06s, acquire-count=1, language=None, thread-identifier=(30362, 8315871424), compute-name=) - Acquired connection on thread (30362, 8315871424), using default compute resource
+[0m08:07:52.219147 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=5399519616, session-id=None, name=list_catalog_sales, idle-time=0s, acquire-count=0, language=None, thread-identifier=(30362, 13994766336), compute-name=) - Creating connection
+[0m08:07:52.219328 [debug] [ThreadPool]: Acquiring new databricks connection 'list_catalog_sales'
+[0m08:07:52.219467 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=5399519616, session-id=None, name=list_catalog_sales, idle-time=9.5367431640625e-07s, acquire-count=1, language=None, thread-identifier=(30362, 13994766336), compute-name=) - Acquired connection on thread (30362, 13994766336), using default compute resource
+[0m08:07:52.219692 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=5399519616, session-id=None, name=list_catalog_sales, idle-time=0.00015687942504882812s, acquire-count=1, language=None, thread-identifier=(30362, 13994766336), compute-name=) - Checking idleness
+[0m08:07:52.219833 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=5399519616, session-id=None, name=list_catalog_sales, idle-time=0.0003719329833984375s, acquire-count=1, language=None, thread-identifier=(30362, 13994766336), compute-name=) - Retrieving connection
+[0m08:07:52.219951 [debug] [ThreadPool]: Using databricks connection "list_catalog_sales"
+[0m08:07:52.220069 [debug] [ThreadPool]: On list_catalog_sales: GetSchemas(database=catalog_sales, schema=None)
+[0m08:07:52.220173 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:10:24.262346 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=5399326464, session-id=None, name=master, idle-time=0.00018405914306640625s, acquire-count=0, language=None, thread-identifier=(30362, 8315871424), compute-name=) - Released connection
+[0m08:10:24.266456 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:10:24.267206 [debug] [MainThread]: Connection 'list_catalog_sales' was left open.
+[0m08:10:24.268245 [info ] [MainThread]: 
+[0m08:10:24.268839 [info ] [MainThread]: Finished running  in 0 hours 2 minutes and 32.05 seconds (152.05s).
+[0m08:10:24.269632 [error] [MainThread]: Encountered an error:
+
+[0m08:10:24.288863 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 626, in create_schemas
+    for ls_future in as_completed(list_futures):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 243, in as_completed
+    waiter.event.wait(wait_timeout)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 569, in run
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 526, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 486, in execute_with_hooks
+    self.before_run(adapter, selected_uids)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/run.py", line 459, in before_run
+    self.create_schemas(adapter, required_schemas)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 617, in create_schemas
+    with dbt_common.utils.executor(self.config) as tpe:  # type: ignore
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 647, in __exit__
+    self.shutdown(wait=True)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 239, in shutdown
+    t.join()
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 1149, in join
+    self._wait_for_tstate_lock()
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 1169, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m08:10:24.293700 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 165.6008, "process_user_time": 2.798726, "process_kernel_time": 3.490877, "process_mem_max_rss": "223412224", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:10:24.294097 [debug] [MainThread]: Command `dbt run` failed at 08:10:24.294031 after 165.60 seconds
+[0m08:10:24.294372 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c2b410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1418dd940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c05b20>]}
+[0m08:10:24.294596 [debug] [MainThread]: Flushing usage events
+[0m08:10:32.851799 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089fe600>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10827f170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1089fe660>]}
+
+
+============================== 08:10:32.854123 | 704f7a3c-d2fb-4ec6-ae5a-1db855097019 ==============================
+[0m08:10:32.854123 [info ] [MainThread]: Running with dbt=1.8.3
+[0m08:10:32.854404 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': '/Users/karelgoense/Documents/testing_code/mvp_dbt_project/logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --target databricks', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m08:10:32.919298 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m08:10:32.919605 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m08:10:32.919740 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m08:10:33.698475 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '704f7a3c-d2fb-4ec6-ae5a-1db855097019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108b6f470>]}
+[0m08:10:33.717165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '704f7a3c-d2fb-4ec6-ae5a-1db855097019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16cb076b0>]}
+[0m08:10:33.717476 [info ] [MainThread]: Registered adapter: databricks=1.8.3
+[0m08:10:33.731695 [debug] [MainThread]: checksum: e3811b42cec9490f76746ed369a895d8bb968af4d7449b96a0b11048fed65dab, vars: {}, profile: , target: databricks, version: 1.8.3
+[0m08:10:33.828133 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:10:33.828346 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:10:33.841377 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '704f7a3c-d2fb-4ec6-ae5a-1db855097019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b727920>]}
+[0m08:10:33.911814 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '704f7a3c-d2fb-4ec6-ae5a-1db855097019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b686930>]}
+[0m08:10:33.912032 [info ] [MainThread]: Found 1 model, 1 seed, 585 macros
+[0m08:10:33.912182 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '704f7a3c-d2fb-4ec6-ae5a-1db855097019', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b731940>]}
+[0m08:10:33.912809 [info ] [MainThread]: 
+[0m08:10:33.913068 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6124065120, session-id=None, name=master, idle-time=0s, acquire-count=0, language=None, thread-identifier=(31248, 8315871424), compute-name=) - Creating connection
+[0m08:10:33.913200 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m08:10:33.913330 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6124065120, session-id=None, name=master, idle-time=2.86102294921875e-06s, acquire-count=1, language=None, thread-identifier=(31248, 8315871424), compute-name=) - Acquired connection on thread (31248, 8315871424), using default compute resource
+[0m08:10:33.913756 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6096967712, session-id=None, name=list_catalog_sales, idle-time=0s, acquire-count=0, language=None, thread-identifier=(31248, 6165655552), compute-name=) - Creating connection
+[0m08:10:33.913934 [debug] [ThreadPool]: Acquiring new databricks connection 'list_catalog_sales'
+[0m08:10:33.914063 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6096967712, session-id=None, name=list_catalog_sales, idle-time=1.9073486328125e-06s, acquire-count=1, language=None, thread-identifier=(31248, 6165655552), compute-name=) - Acquired connection on thread (31248, 6165655552), using default compute resource
+[0m08:10:33.914197 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6096967712, session-id=None, name=list_catalog_sales, idle-time=0.00013899803161621094s, acquire-count=1, language=None, thread-identifier=(31248, 6165655552), compute-name=) - Checking idleness
+[0m08:10:33.914312 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6096967712, session-id=None, name=list_catalog_sales, idle-time=0.0002570152282714844s, acquire-count=1, language=None, thread-identifier=(31248, 6165655552), compute-name=) - Retrieving connection
+[0m08:10:33.914413 [debug] [ThreadPool]: Using databricks connection "list_catalog_sales"
+[0m08:10:33.914517 [debug] [ThreadPool]: On list_catalog_sales: GetSchemas(database=catalog_sales, schema=None)
+[0m08:10:33.914615 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:10:34.594084 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6096967712, session-id=01f08ed6-1714-159b-8046-dbfc1f31e386, name=list_catalog_sales, idle-time=1.0967254638671875e-05s, acquire-count=1, language=None, thread-identifier=(31248, 6165655552), compute-name=) - Connection created
+[0m08:10:34.595116 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08ed6-1714-159b-8046-dbfc1f31e386, command-id=Unknown) - Created cursor
+[0m08:10:40.112570 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6124065120, session-id=None, name=master, idle-time=8.344650268554688e-06s, acquire-count=0, language=None, thread-identifier=(31248, 8315871424), compute-name=) - Released connection
+[0m08:10:40.113143 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:10:40.113371 [debug] [MainThread]: Connection 'list_catalog_sales' was left open.
+[0m08:10:40.113576 [debug] [MainThread]: On list_catalog_sales: Close
+[0m08:10:40.113813 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f08ed6-1714-159b-8046-dbfc1f31e386) - Closing connection
+[0m08:10:40.286872 [error] [MainThread]: Encountered an error:
+
+[0m08:10:40.292491 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 626, in create_schemas
+    for ls_future in as_completed(list_futures):
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 243, in as_completed
+    waiter.event.wait(wait_timeout)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 655, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 486, in execute_with_hooks
+    self.before_run(adapter, selected_uids)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/run.py", line 459, in before_run
+    self.create_schemas(adapter, required_schemas)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 617, in create_schemas
+    with dbt_common.utils.executor(self.config) as tpe:  # type: ignore
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/_base.py", line 647, in __exit__
+    self.shutdown(wait=True)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/concurrent/futures/thread.py", line 239, in shutdown
+    t.join()
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 1149, in join
+    self._wait_for_tstate_lock()
+  File "/opt/homebrew/Cellar/python@3.12/3.12.11/Frameworks/Python.framework/Versions/3.12/lib/python3.12/threading.py", line 1169, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/cli/main.py", line 569, in run
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 526, in run
+    result = self.execute_with_hooks(selected_uids)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/task/runnable.py", line 490, in execute_with_hooks
+    adapter.cleanup_connections()
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/base/impl.py", line 302, in cleanup_connections
+    self.connections.cleanup_all()
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 870, in cleanup_all
+    self.close(connection)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 851, in close
+    return super().close(connection)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 379, in close
+    cls._close_handle(connection)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/base/connections.py", line 346, in _close_handle
+    connection.handle.close()
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/dbt/adapters/databricks/connections.py", line 153, in close
+    self._conn.close()
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/databricks/sql/client.py", line 347, in close
+    self._close()
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/databricks/sql/client.py", line 359, in _close
+    self.thrift_backend.close_session(self._session_handle)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/databricks/sql/thrift_backend.py", line 589, in close_session
+    self.make_request(self._client.CloseSession, req)
+  File "/Users/karelgoense/Documents/testing_code/mvp_dbt_project/.venv/lib/python3.12/site-packages/databricks/sql/thrift_backend.py", line 494, in make_request
+    with self._request_lock:
+         ^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+[0m08:10:40.295178 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 7.471514, "process_user_time": 1.648269, "process_kernel_time": 3.36697, "process_mem_max_rss": "214351872", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m08:10:40.295391 [debug] [MainThread]: Command `dbt run` failed at 08:10:40.295353 after 7.47 seconds
+[0m08:10:40.295534 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:10:40.295655 [debug] [MainThread]: Connection 'list_catalog_sales' was left open.
+[0m08:10:40.295859 [debug] [MainThread]: On list_catalog_sales: Close
+[0m08:10:40.296027 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f08ed6-1714-159b-8046-dbfc1f31e386) - Closing connection
+[0m08:13:39.740601 [debug] [MainThread]: Flushing usage events
+[0m08:13:39.745160 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m13:19:06.335384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1059a6cf0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106665fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106665a30>]}
+
+
+============================== 13:19:06.337974 | a7e7faf7-c737-42f9-afab-4b3a536e07c5 ==============================
+[0m13:19:06.337974 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:19:06.338268 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'log_path': '/Users/karelgoense/Documents/testing_code/dbt/mvp_dbt_project/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run --target databricks', 'send_anonymous_usage_stats': 'True'}
+[0m13:19:06.340433 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.databricks'
+[0m13:19:06.340669 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "databricks" invalid: Runtime Error
+    Could not find adapter type databricks!
+[0m13:19:06.346248 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.046826374, "process_user_time": 0.490816, "process_kernel_time": 0.094548, "process_mem_max_rss": "97189888", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:19:06.346634 [debug] [MainThread]: Command `dbt run` failed at 13:19:06.346588 after 0.05 seconds
+[0m13:19:06.346811 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106665a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106665580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064ffe30>]}
+[0m13:19:06.346974 [debug] [MainThread]: Flushing usage events
+[0m13:22:15.456334 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103ebb110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10494ddc0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10494da60>]}
+
+
+============================== 13:22:15.458895 | fee3650b-8bde-47a0-829e-54e72c452be2 ==============================
+[0m13:22:15.458895 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:22:15.459207 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/Users/karelgoense/Documents/testing_code/dbt/mvp_dbt_project/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --target databricks', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m13:22:15.461360 [info ] [MainThread]: Error importing adapter: No module named 'dbt.adapters.databricks'
+[0m13:22:15.461602 [error] [MainThread]: Encountered an error:
+Runtime Error
+  Credentials in profile "mvp_profile", target "databricks" invalid: Runtime Error
+    Could not find adapter type databricks!
+[0m13:22:15.463204 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.03495475, "process_user_time": 0.494174, "process_kernel_time": 0.115038, "process_mem_max_rss": "95338496", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:22:15.463480 [debug] [MainThread]: Command `dbt run` failed at 13:22:15.463438 after 0.04 seconds
+[0m13:22:15.463643 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10494da60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10494f830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10494f860>]}
+[0m13:22:15.463794 [debug] [MainThread]: Flushing usage events
+[0m13:22:45.352704 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110c0d3d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074203b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107420380>]}
+
+
+============================== 13:22:45.355320 | d73add72-25d4-4861-a2bd-e562bf9e6dd6 ==============================
+[0m13:22:45.355320 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:22:45.355616 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'log_path': '/Users/karelgoense/Documents/testing_code/dbt/mvp_dbt_project/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --target databricks', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m13:22:46.376572 [debug] [MainThread]: Spark adapter: Setting pyhive.hive logging to ERROR
+[0m13:22:46.377216 [debug] [MainThread]: Spark adapter: Setting thrift.transport logging to ERROR
+[0m13:22:46.377551 [debug] [MainThread]: Spark adapter: Setting thrift.protocol logging to ERROR
+[0m13:22:56.287713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111109d00>]}
+[0m13:22:56.307391 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110ff35f0>]}
+[0m13:22:56.307706 [info ] [MainThread]: Registered adapter: databricks=1.8.3
+[0m13:22:56.363571 [debug] [MainThread]: checksum: 51cb72aabb7cd2fa22c9c245958dee05b2388a5dad2670a6e1ebf7a72a92c5a0, vars: {}, profile: , target: databricks, version: 1.8.7
+[0m13:22:56.399450 [info ] [MainThread]: Unable to do partial parsing because of a version mismatch
+[0m13:22:56.399789 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1104ddc10>]}
+[0m13:22:57.187985 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d9d9940>]}
+[0m13:22:57.273118 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16ee7eae0>]}
+[0m13:22:57.273430 [info ] [MainThread]: Found 1 model, 1 seed, 585 macros
+[0m13:22:57.273637 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16ba218b0>]}
+[0m13:22:57.274571 [info ] [MainThread]: 
+[0m13:22:57.274942 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=0s, acquire-count=0, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Creating connection
+[0m13:22:57.275126 [debug] [MainThread]: Acquiring new databricks connection 'master'
+[0m13:22:57.275305 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=3.0994415283203125e-06s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Acquired connection on thread (51032, 8315871424), using default compute resource
+[0m13:22:57.275890 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=None, name=list_hive_metastore, idle-time=0s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Creating connection
+[0m13:22:57.276141 [debug] [ThreadPool]: Acquiring new databricks connection 'list_hive_metastore'
+[0m13:22:57.276326 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=None, name=list_hive_metastore, idle-time=2.1457672119140625e-06s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Acquired connection on thread (51032, 12958871552), using default compute resource
+[0m13:22:57.276520 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=None, name=list_hive_metastore, idle-time=0.00020122528076171875s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:22:57.276707 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=None, name=list_hive_metastore, idle-time=0.0003921985626220703s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Retrieving connection
+[0m13:22:57.276865 [debug] [ThreadPool]: Using databricks connection "list_hive_metastore"
+[0m13:22:57.277016 [debug] [ThreadPool]: On list_hive_metastore: GetSchemas(database=hive_metastore, schema=None)
+[0m13:22:57.277159 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:22:57.939929 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore, idle-time=1.1920928955078125e-05s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Connection created
+[0m13:22:57.941251 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=Unknown) - Created cursor
+[0m13:23:04.288541 [debug] [ThreadPool]: SQL status: OK in 7.010000228881836 seconds
+[0m13:23:04.294632 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=01f08f01-ab53-1d2d-b0a5-4639772ef84a) - Closing cursor
+[0m13:23:04.295220 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore, idle-time=3.0994415283203125e-06s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Released connection
+[0m13:23:04.295989 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore, idle-time=0.0007867813110351562s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:04.296318 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_hive_metastore, now create_hive_metastore_dbo)
+[0m13:23:04.296641 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.0014510154724121094s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Reusing connection previously named list_hive_metastore
+[0m13:23:04.296937 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.001748800277709961s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Acquired connection on thread (51032, 12958871552), using default compute resource
+[0m13:23:04.297300 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.002115011215209961s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:04.297604 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.0024161338806152344s, acquire-count=2, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Acquired connection on thread (51032, 12958871552), using default compute resource
+[0m13:23:04.297928 [debug] [ThreadPool]: Creating schema "database: "hive_metastore"
+schema: "dbo"
+"
+[0m13:23:04.306202 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.011006832122802734s, acquire-count=2, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:04.306508 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.011327981948852539s, acquire-count=2, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Retrieving connection
+[0m13:23:04.306762 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.01158905029296875s, acquire-count=2, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:04.307007 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.011835813522338867s, acquire-count=2, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Retrieving connection
+[0m13:23:04.307225 [debug] [ThreadPool]: Spark adapter: NotImplemented: add_begin_query
+[0m13:23:04.307425 [debug] [ThreadPool]: Using databricks connection "create_hive_metastore_dbo"
+[0m13:23:04.307654 [debug] [ThreadPool]: On create_hive_metastore_dbo: /* {"app": "dbt", "dbt_version": "1.8.7", "dbt_databricks_version": "1.8.3", "databricks_sql_connector_version": "3.1.2", "profile_name": "mvp_profile", "target_name": "databricks", "connection_name": "create_hive_metastore_dbo"} */
+create schema if not exists `hive_metastore`.`dbo`
+  
+[0m13:23:04.307894 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=Unknown) - Created cursor
+[0m13:23:05.547436 [debug] [ThreadPool]: SQL status: OK in 1.2400000095367432 seconds
+[0m13:23:05.548501 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=01f08f01-af13-1bf8-a96d-a80136b6bc1c) - Closing cursor
+[0m13:23:05.548937 [debug] [ThreadPool]: Spark adapter: NotImplemented: commit
+[0m13:23:05.549215 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=1.2540419101715088s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Released connection
+[0m13:23:05.549569 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=9.5367431640625e-07s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Released connection
+[0m13:23:05.553681 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=create_hive_metastore_dbo, idle-time=0.004043102264404297s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:05.554126 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_hive_metastore_dbo, now list_hive_metastore_dbo)
+[0m13:23:05.554360 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore_dbo, idle-time=0.004782915115356445s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Reusing connection previously named create_hive_metastore_dbo
+[0m13:23:05.554564 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore_dbo, idle-time=0.004988908767700195s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Acquired connection on thread (51032, 12958871552), using default compute resource
+[0m13:23:05.554777 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore_dbo, idle-time=0.00521397590637207s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Checking idleness
+[0m13:23:05.555049 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore_dbo, idle-time=0.005460977554321289s, acquire-count=1, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Retrieving connection
+[0m13:23:05.555249 [debug] [ThreadPool]: Using databricks connection "list_hive_metastore_dbo"
+[0m13:23:05.555498 [debug] [ThreadPool]: On list_hive_metastore_dbo: GetTables(database=hive_metastore, schema=dbo, identifier=None)
+[0m13:23:05.555908 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=Unknown) - Created cursor
+[0m13:23:06.273541 [debug] [ThreadPool]: SQL status: OK in 0.7200000286102295 seconds
+[0m13:23:06.279054 [debug] [ThreadPool]: Databricks adapter: Cursor(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, command-id=01f08f01-afe0-1f18-b808-17d0138a4063) - Closing cursor
+[0m13:23:06.279562 [debug] [ThreadPool]: Databricks adapter: DatabricksDBTConnection(id=6100495984, session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7, name=list_hive_metastore_dbo, idle-time=4.0531158447265625e-06s, acquire-count=0, language=None, thread-identifier=(51032, 12958871552), compute-name=) - Released connection
+[0m13:23:06.280162 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16b9a3320>]}
+[0m13:23:06.280596 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=9.005286931991577s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Checking idleness
+[0m13:23:06.280977 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=9.005678176879883s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Retrieving connection
+[0m13:23:06.281771 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=9.006399154663086s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Checking idleness
+[0m13:23:06.282075 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=9.006776094436646s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Retrieving connection
+[0m13:23:06.282272 [debug] [MainThread]: Spark adapter: NotImplemented: add_begin_query
+[0m13:23:06.282431 [debug] [MainThread]: Spark adapter: NotImplemented: commit
+[0m13:23:06.282765 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.1457672119140625e-06s, acquire-count=0, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Released connection
+[0m13:23:06.283148 [info ] [MainThread]: Concurrency: 3 threads (target='databricks')
+[0m13:23:06.283419 [info ] [MainThread]: 
+[0m13:23:06.294486 [debug] [Thread-1 (]: Began running node model.mvp_dbt_project.example
+[0m13:23:06.295030 [info ] [Thread-1 (]: 1 of 1 START sql view model dbo.example ........................................ [RUN]
+[0m13:23:06.296569 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=0s, acquire-count=0, language=None, thread-identifier=(51032, 12980645888), compute-name=) - Creating connection
+[0m13:23:06.296795 [debug] [Thread-1 (]: Acquiring new databricks connection 'model.mvp_dbt_project.example'
+[0m13:23:06.296996 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=2.1457672119140625e-06s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Acquired connection on thread (51032, 12980645888), using default compute resource for model '`hive_metastore`.`dbo`.`example`'
+[0m13:23:06.297182 [debug] [Thread-1 (]: Began compiling node model.mvp_dbt_project.example
+[0m13:23:06.300835 [debug] [Thread-1 (]: Writing injected SQL for node "model.mvp_dbt_project.example"
+[0m13:23:06.301848 [debug] [Thread-1 (]: Began executing node model.mvp_dbt_project.example
+[0m13:23:06.318970 [debug] [Thread-1 (]: Writing runtime sql for node "model.mvp_dbt_project.example"
+[0m13:23:06.319859 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=0.022784948348999023s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Checking idleness
+[0m13:23:06.320202 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=0.023211956024169922s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Retrieving connection
+[0m13:23:06.320406 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=0.02342820167541504s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Checking idleness
+[0m13:23:06.320588 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=None, name=model.mvp_dbt_project.example, idle-time=0.023611068725585938s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Retrieving connection
+[0m13:23:06.320886 [debug] [Thread-1 (]: Spark adapter: NotImplemented: add_begin_query
+[0m13:23:06.321037 [debug] [Thread-1 (]: Using databricks connection "model.mvp_dbt_project.example"
+[0m13:23:06.321222 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: /* {"app": "dbt", "dbt_version": "1.8.7", "dbt_databricks_version": "1.8.3", "databricks_sql_connector_version": "3.1.2", "profile_name": "mvp_profile", "target_name": "databricks", "node_id": "model.mvp_dbt_project.example"} */
+create or replace view `hive_metastore`.`dbo`.`example`
+  
+  
+  
+  as
+    -- Example dbt model
+select 1 as id, 'hello_dbt' as message
+
+[0m13:23:06.321392 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m13:23:06.570404 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=01f08f01-b05e-1867-b75b-61a1797f53ae, name=model.mvp_dbt_project.example, idle-time=7.867813110351562e-06s, acquire-count=1, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Connection created
+[0m13:23:06.571368 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f08f01-b05e-1867-b75b-61a1797f53ae, command-id=Unknown) - Created cursor
+[0m13:23:09.031323 [debug] [Thread-1 (]: SQL status: OK in 2.7100000381469727 seconds
+[0m13:23:09.033619 [debug] [Thread-1 (]: Databricks adapter: Cursor(session-id=01f08f01-b05e-1867-b75b-61a1797f53ae, command-id=01f08f01-b06f-14d8-8a48-064f750b8b20) - Closing cursor
+[0m13:23:09.048203 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=01f08f01-b05e-1867-b75b-61a1797f53ae, name=model.mvp_dbt_project.example, idle-time=3.0994415283203125e-06s, acquire-count=0, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Released connection
+[0m13:23:09.048853 [debug] [Thread-1 (]: Databricks adapter: DatabricksDBTConnection(id=6133710768, session-id=01f08f01-b05e-1867-b75b-61a1797f53ae, name=model.mvp_dbt_project.example, idle-time=1.6689300537109375e-06s, acquire-count=0, language=sql, thread-identifier=(51032, 12980645888), compute-name=) - Released connection
+[0m13:23:09.049894 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd73add72-25d4-4861-a2bd-e562bf9e6dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x16d4e1d30>]}
+[0m13:23:09.050266 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbo.example ................................... [[32mOK[0m in 2.75s]
+[0m13:23:09.050776 [debug] [Thread-1 (]: Finished running node model.mvp_dbt_project.example
+[0m13:23:09.051935 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.7691431045532227s, acquire-count=0, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Checking idleness
+[0m13:23:09.052306 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.769564151763916s, acquire-count=0, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Reusing connection previously named master
+[0m13:23:09.052525 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.769787073135376s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Acquired connection on thread (51032, 8315871424), using default compute resource
+[0m13:23:09.052738 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.7700042724609375s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Checking idleness
+[0m13:23:09.052929 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=None, name=master, idle-time=2.770198106765747s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Retrieving connection
+[0m13:23:09.053101 [debug] [MainThread]: On master: ROLLBACK
+[0m13:23:09.053264 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:23:09.366281 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=01f08f01-b20d-14b5-908b-9ea417607624, name=master, idle-time=7.867813110351562e-06s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Connection created
+[0m13:23:09.367106 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m13:23:09.367595 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=01f08f01-b20d-14b5-908b-9ea417607624, name=master, idle-time=0.001500844955444336s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Checking idleness
+[0m13:23:09.368032 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=01f08f01-b20d-14b5-908b-9ea417607624, name=master, idle-time=0.0019497871398925781s, acquire-count=1, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Retrieving connection
+[0m13:23:09.368496 [debug] [MainThread]: Spark adapter: NotImplemented: add_begin_query
+[0m13:23:09.368948 [debug] [MainThread]: Spark adapter: NotImplemented: commit
+[0m13:23:09.369641 [debug] [MainThread]: Databricks adapter: DatabricksDBTConnection(id=6155538976, session-id=01f08f01-b20d-14b5-908b-9ea417607624, name=master, idle-time=4.0531158447265625e-06s, acquire-count=0, language=None, thread-identifier=(51032, 8315871424), compute-name=) - Released connection
+[0m13:23:09.370578 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:23:09.371052 [debug] [MainThread]: On master: ROLLBACK
+[0m13:23:09.371394 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m13:23:09.371707 [debug] [MainThread]: On master: Close
+[0m13:23:09.372041 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f08f01-b20d-14b5-908b-9ea417607624) - Closing connection
+[0m13:23:09.477471 [debug] [MainThread]: Connection 'list_hive_metastore_dbo' was properly closed.
+[0m13:23:09.478797 [debug] [MainThread]: On list_hive_metastore_dbo: ROLLBACK
+[0m13:23:09.479613 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m13:23:09.480093 [debug] [MainThread]: On list_hive_metastore_dbo: Close
+[0m13:23:09.480575 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f08f01-ab2c-11e8-bd8f-cbfb23c9bda7) - Closing connection
+[0m13:23:09.583595 [debug] [MainThread]: Connection 'model.mvp_dbt_project.example' was properly closed.
+[0m13:23:09.584628 [debug] [MainThread]: On model.mvp_dbt_project.example: ROLLBACK
+[0m13:23:09.585092 [debug] [MainThread]: Databricks adapter: NotImplemented: rollback
+[0m13:23:09.585560 [debug] [MainThread]: On model.mvp_dbt_project.example: Close
+[0m13:23:09.586051 [debug] [MainThread]: Databricks adapter: Connection(session-id=01f08f01-b05e-1867-b75b-61a1797f53ae) - Closing connection
+[0m13:23:09.701669 [info ] [MainThread]: 
+[0m13:23:09.702365 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 12.43 seconds (12.43s).
+[0m13:23:09.703370 [debug] [MainThread]: Command end result
+[0m13:23:09.728524 [info ] [MainThread]: 
+[0m13:23:09.728839 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:23:09.729009 [info ] [MainThread]: 
+[0m13:23:09.729375 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m13:23:09.732724 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 24.409386, "process_user_time": 3.76116, "process_kernel_time": 3.322633, "process_mem_max_rss": "239501312", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:23:09.733300 [debug] [MainThread]: Command `dbt run` succeeded at 13:23:09.733224 after 24.41 seconds
+[0m13:23:09.733638 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11103be00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11103bfe0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1109b1d30>]}
+[0m13:23:09.733909 [debug] [MainThread]: Flushing usage events
+[0m09:29:40.637079 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc4f020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e34560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109e344d0>]}
+
+
+============================== 09:29:40.648744 | af58e8f0-4282-402e-8ed0-9a2c360809fa ==============================
+[0m09:29:40.648744 [info ] [MainThread]: Running with dbt=1.8.7
+[0m09:29:40.649176 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/karelgoense/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/karelgoense/Documents/testing_code/dbt/mvp_dbt_project/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt run --target fabric', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:29:42.374845 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c4b9e50>]}
+[0m09:29:42.395217 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c22c860>]}
+[0m09:29:42.395657 [info ] [MainThread]: Registered adapter: fabric=1.8.7
+[0m09:29:42.466018 [debug] [MainThread]: checksum: c914c28bd3c7348666b66e4889ced4d29ba229741eba4e20c0de1a9a9ecfd7c4, vars: {}, profile: , target: fabric, version: 1.8.7
+[0m09:29:42.513096 [info ] [MainThread]: Unable to do partial parsing because config vars, config profile, or config target have changed
+[0m09:29:42.513416 [debug] [MainThread]: previous checksum: c914c28bd3c7348666b66e4889ced4d29ba229741eba4e20c0de1a9a9ecfd7c4, current checksum: 51cb72aabb7cd2fa22c9c245958dee05b2388a5dad2670a6e1ebf7a72a92c5a0
+[0m09:29:42.513569 [info ] [MainThread]: Unable to do partial parsing because profile has changed
+[0m09:29:42.513721 [info ] [MainThread]: Unable to do partial parsing because a project dependency has been added
+[0m09:29:42.513885 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x118bf6ae0>]}
+[0m09:29:43.171320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc8d040>]}
+[0m09:29:43.253940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bddbbf0>]}
+[0m09:29:43.254254 [info ] [MainThread]: Found 1 model, 1 seed, 449 macros
+[0m09:29:43.254445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bdb7680>]}
+[0m09:29:43.255238 [info ] [MainThread]: 
+[0m09:29:43.255523 [debug] [MainThread]: Acquiring new fabric connection 'master'
+[0m09:29:43.256037 [debug] [ThreadPool]: Acquiring new fabric connection 'list_bronze_sales'
+[0m09:29:43.263221 [debug] [ThreadPool]: dbt-fabric
+[0m09:29:43.263646 [debug] [ThreadPool]: Using fabric connection "list_bronze_sales"
+[0m09:29:43.263832 [debug] [ThreadPool]: On list_bronze_sales: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales"} */
+select  name as [schema]
+    from sys.schemas  
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m09:29:43.263993 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:29:43.264184 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.8.7;ConnectRetryCount=1
+[0m09:29:45.860281 [debug] [ThreadPool]: fabric adapter: Connected to db: bronze_sales
+[0m09:29:45.894246 [debug] [ThreadPool]: SQL status: OK in 3.0 seconds
+[0m09:29:45.896035 [debug] [ThreadPool]: On list_bronze_sales: Close
+[0m09:29:45.901038 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_bronze_sales, now list_bronze_sales_dbo)
+[0m09:29:45.907698 [debug] [ThreadPool]: dbt-fabric
+[0m09:29:45.908090 [debug] [ThreadPool]: Using fabric connection "list_bronze_sales_dbo"
+[0m09:29:45.908379 [debug] [ThreadPool]: On list_bronze_sales_dbo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "mvp_profile", "target_name": "fabric", "connection_name": "list_bronze_sales_dbo"} */
+USE [bronze_sales];
+    with base as (
+      select
+        DB_NAME() as [database],
+        t.name as [name],
+        SCHEMA_NAME(t.schema_id) as [schema],
+        'table' as table_type
+      from sys.tables as t 
+      union all
+      select
+        DB_NAME() as [database],
+        v.name as [name],
+        SCHEMA_NAME(v.schema_id) as [schema],
+        'view' as table_type
+      from sys.views as v 
+    )
+    select * from base
+    where [schema] like 'dbo'
+    
+    OPTION (LABEL = 'dbt-fabric-dw');
+
+  
+[0m09:29:45.908652 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:29:45.908930 [debug] [ThreadPool]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.8.7;ConnectRetryCount=1
+[0m09:29:45.909217 [debug] [ThreadPool]: fabric adapter: Connected to db: bronze_sales
+[0m09:29:45.978895 [debug] [ThreadPool]: SQL status: OK in 0.0 seconds
+[0m09:29:45.980212 [debug] [ThreadPool]: On list_bronze_sales_dbo: ROLLBACK
+[0m09:29:45.980535 [debug] [ThreadPool]: On list_bronze_sales_dbo: Close
+[0m09:29:45.981423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1188301d0>]}
+[0m09:29:45.981839 [debug] [MainThread]: On master: COMMIT
+[0m09:29:45.982202 [info ] [MainThread]: Concurrency: 4 threads (target='fabric')
+[0m09:29:45.982497 [info ] [MainThread]: 
+[0m09:29:45.990407 [debug] [Thread-1 (]: Began running node model.mvp_dbt_project.example
+[0m09:29:45.990989 [info ] [Thread-1 (]: 1 of 1 START sql view model dbo.example ........................................ [RUN]
+[0m09:29:45.991431 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_bronze_sales_dbo, now model.mvp_dbt_project.example)
+[0m09:29:45.991758 [debug] [Thread-1 (]: Began compiling node model.mvp_dbt_project.example
+[0m09:29:45.996680 [debug] [Thread-1 (]: Writing injected SQL for node "model.mvp_dbt_project.example"
+[0m09:29:45.997826 [debug] [Thread-1 (]: Began executing node model.mvp_dbt_project.example
+[0m09:29:46.014784 [debug] [Thread-1 (]: Writing runtime sql for node "model.mvp_dbt_project.example"
+[0m09:29:46.015778 [debug] [Thread-1 (]: Using fabric connection "model.mvp_dbt_project.example"
+[0m09:29:46.016035 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "mvp_profile", "target_name": "fabric", "node_id": "model.mvp_dbt_project.example"} */
+USE [bronze_sales];
+    
+    
+
+    EXEC('create view "dbo"."example" as -- Example dbt model
+select 1 as id, ''hello_dbt'' as message;');
+
+
+
+[0m09:29:46.016259 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:29:46.016493 [debug] [Thread-1 (]: fabric adapter: Using connection string: DRIVER={ODBC Driver 18 for SQL Server};SERVER=f7x5z7ufbtoubd2v4iyuhxftm4-6qaivufs6jietmxjoryqp6dwu4.datawarehouse.fabric.microsoft.com;Database=bronze_sales;SQL_ATTR_TRACE=SQL_OPT_TRACE_OFF;Authentication=ActiveDirectoryServicePrincipal;UID={a1777b3a-9f6f-4eb9-9f12-bc9e7b6c8e8f};PWD=***;encrypt=Yes;TrustServerCertificate=No;APP=dbt-fabric/1.8.7;ConnectRetryCount=1
+[0m09:29:46.951080 [debug] [Thread-1 (]: fabric adapter: Connected to db: bronze_sales
+[0m09:29:47.070998 [debug] [Thread-1 (]: SQL status: OK in 1.0 seconds
+[0m09:29:47.091886 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: COMMIT
+[0m09:29:47.093495 [debug] [Thread-1 (]: On model.mvp_dbt_project.example: Close
+[0m09:29:47.094606 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'af58e8f0-4282-402e-8ed0-9a2c360809fa', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108be7d40>]}
+[0m09:29:47.095095 [info ] [Thread-1 (]: 1 of 1 OK created sql view model dbo.example ................................... [[32mOK[0m in 1.10s]
+[0m09:29:47.095569 [debug] [Thread-1 (]: Finished running node model.mvp_dbt_project.example
+[0m09:29:47.096557 [debug] [MainThread]: On master: COMMIT
+[0m09:29:47.096931 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:29:47.097176 [debug] [MainThread]: Connection 'model.mvp_dbt_project.example' was properly closed.
+[0m09:29:47.097435 [info ] [MainThread]: 
+[0m09:29:47.097703 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 3.84 seconds (3.84s).
+[0m09:29:47.098208 [debug] [MainThread]: Command end result
+[0m09:29:47.115664 [info ] [MainThread]: 
+[0m09:29:47.115997 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:29:47.116301 [info ] [MainThread]: 
+[0m09:29:47.116525 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m09:29:47.174530 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 6.645571, "process_user_time": 2.051185, "process_kernel_time": 0.657988, "process_mem_max_rss": "142704640", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m09:29:47.175034 [debug] [MainThread]: Command `dbt run` succeeded at 09:29:47.174967 after 6.65 seconds
+[0m09:29:47.175320 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bc4f020>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4b1820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1188d6330>]}
+[0m09:29:47.175588 [debug] [MainThread]: Flushing usage events
