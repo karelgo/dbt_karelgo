@@ -29,7 +29,8 @@ select
     region,
     
     -- Data lineage metadata
-  CAST(SYSDATETIME() AS datetime2(6)) as _loaded_at,
+  -- CAST(SYSDATETIME() AS datetime2(6)) as _loaded_at,
+    current_timestamp as _loaded_at,
     'benefit_data_seed' as _source_system
     
 from {{ ref('benefit_data') }}

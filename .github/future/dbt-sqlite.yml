@@ -1,0 +1,91 @@
+name: dbt SQLite CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  test-dbt-sqlite:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Set up virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+          echo "VIRTUAL_ENV=${{ github.workspace }}/venv" >> $GITHUB_ENV
+          echo "${{ github.workspace }}/venv/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install dbt-sqlite
+
+      - name: Configure dbt profile for SQLite
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<'EOF'
+          mvp_profile:
+            target: sqlite
+            outputs:
+              sqlite:
+                type: sqlite
+                threads: 1
+                database: ./dbt_sqlite.db  # local SQLite file
+                schema: dbt
+                schema_directory: ./models  # directory for storing schema files
+                schemas_and_paths:
+                  main: ${{ github.workspace }}/ci_sqlite.db
+            
+          EOF
+
+      - name: Verify dbt installation and connection
+        run: |
+          dbt --version
+          dbt debug --target sqlite
+
+      - name: Install dbt packages (if any)
+        run: dbt deps --target sqlite
+
+      - name: Run dbt seed
+        run: dbt seed --target sqlite --full-refresh
+
+      - name: Run dbt models
+        run: dbt run --target sqlite --full-refresh
+
+      - name: Run dbt tests
+        run: dbt test --target sqlite
+
+      - name: Generate dbt docs
+        run: dbt docs generate --target sqlite
+
+      - name: Upload test results and artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-sqlite-results
+          path: |
+            target/
+            logs/
+            ci_sqlite.db
+          retention-days: 7
