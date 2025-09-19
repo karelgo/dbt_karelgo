@@ -30,6 +30,9 @@ mvp_profile:
       threads: 4
 EOF
 
+# Run in shell
+source .venv/bin/activate
+
 # Run dbt commands
 dbt seed
 dbt run
