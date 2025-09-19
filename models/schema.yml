@@ -13,3 +13,178 @@ models:
         description: "A simple message field"
         tests:
           - not_null
+
+  # Bronze Layer Models
+  - name: bronze_personal_client
+    description: "Raw personal demographics data with data lineage metadata"
+    columns:
+      - name: client_id
+        description: "Unique identifier for each client"
+        tests:
+          - unique
+          - not_null
+      - name: age
+        description: "Client's age in years"
+        tests:
+          - not_null
+      - name: gender
+        description: "Client's gender"
+        tests:
+          - not_null
+      - name: education_level
+        description: "Client's highest education level"
+      - name: region
+        description: "Geographic region where client is located"
+        tests:
+          - not_null
+      - name: industry
+        description: "Industry of client's professional background"
+      - name: years_experience
+        description: "Years of professional experience"
+      - name: last_employer
+        description: "Most recent employer"
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+      - name: _source_system
+        description: "Source system identifier for data lineage"
+        tests:
+          - not_null
+
+  - name: bronze_benefit_data
+    description: "Raw benefit program data with data lineage metadata"
+    columns:
+      - name: client_id
+        description: "Unique identifier for each client"
+        tests:
+          - not_null
+      - name: benefit_type
+        description: "Type of benefit program"
+        tests:
+          - not_null
+      - name: start_date
+        description: "Benefit program start date"
+        tests:
+          - not_null
+      - name: end_date
+        description: "Benefit program end date (null if ongoing)"
+      - name: duration_months
+        description: "Planned duration of benefit in months"
+      - name: transition_to_work
+        description: "Whether client transitioned back to work"
+      - name: benefit_amount
+        description: "Monthly benefit amount"
+        tests:
+          - not_null
+      - name: region
+        description: "Geographic region for benefit program"
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+      - name: _source_system
+        description: "Source system identifier for data lineage"
+        tests:
+          - not_null
+
+  # Silver Layer Models
+  - name: silver_demographics_benefit
+    description: "Unified demographics and benefit data with cleansing and standardization"
+    columns:
+      - name: client_id
+        description: "Unique identifier for each client"
+        tests:
+          - unique
+          - not_null
+      - name: age
+        description: "Client's age in years"
+        tests:
+          - not_null
+      - name: gender
+        description: "Standardized gender (uppercase)"
+      - name: education_level_standardized
+        description: "Standardized education level categories"
+        tests:
+          - not_null
+      - name: region
+        description: "Standardized geographic region (uppercase)"
+        tests:
+          - not_null
+      - name: industry
+        description: "Standardized industry (uppercase)"
+      - name: years_experience
+        description: "Years of professional experience"
+      - name: last_employer
+        description: "Most recent employer"
+      - name: benefit_type
+        description: "Type of benefit program"
+        tests:
+          - not_null
+      - name: start_date
+        description: "Benefit program start date"
+      - name: end_date
+        description: "Benefit program end date (null if ongoing)"
+      - name: actual_duration_months
+        description: "Calculated actual duration in months"
+      - name: reported_duration_months
+        description: "Originally reported duration in months"
+      - name: transition_to_work
+        description: "Boolean flag for work transition success"
+      - name: benefit_amount
+        description: "Monthly benefit amount"
+      - name: age_group
+        description: "Age group categorization"
+        tests:
+          - not_null
+      - name: experience_level
+        description: "Experience level categorization"
+        tests:
+          - not_null
+      - name: region_mismatch
+        description: "Data quality flag for region inconsistencies"
+      - name: invalid_benefit_amount
+        description: "Data quality flag for invalid benefit amounts"
+      - name: questionable_age
+        description: "Data quality flag for questionable age values"
+
+  # Gold Layer Models
+  - name: gold_benefit_analysis
+    description: "Aggregated analytics for benefit program effectiveness and demographics analysis"
+    columns:
+      - name: analysis_type
+        description: "Type of analysis (regional, benefit_type, demographics, experience)"
+        tests:
+          - not_null
+      - name: dimension_1
+        description: "Primary dimension for analysis"
+        tests:
+          - not_null
+      - name: dimension_2
+        description: "Secondary dimension for analysis"
+      - name: dimension_3
+        description: "Tertiary dimension for analysis"
+      - name: total_recipients
+        description: "Total number of benefit recipients"
+        tests:
+          - not_null
+      - name: successful_transitions
+        description: "Number of successful transitions to work"
+        tests:
+          - not_null
+      - name: transition_success_rate_pct
+        description: "Percentage of successful work transitions"
+      - name: avg_duration_months
+        description: "Average benefit duration in months"
+      - name: avg_benefit_amount
+        description: "Average monthly benefit amount"
+      - name: total_benefit_amount
+        description: "Total benefit amount (for regional analysis)"
+      - name: min_benefit_amount
+        description: "Minimum benefit amount (for regional analysis)"
+      - name: max_benefit_amount
+        description: "Maximum benefit amount (for regional analysis)"
+      - name: _calculated_at
+        description: "Timestamp when analysis was calculated"
+        tests:
+          - not_null

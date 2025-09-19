@@ -8,3 +8,22 @@ model-paths: ["models"]
 seed-paths: ["seeds"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
+
+models:
+  mvp_dbt_project:
+    # Medallion Architecture Configuration
+    bronze:
+      +materialized: table
+      +tags:
+        - "bronze"
+        - "raw"
+    silver:
+      +materialized: table
+      +tags:
+        - "silver"
+        - "transformed"
+    gold:
+      +materialized: table
+      +tags:
+        - "gold"
+        - "analytics"
