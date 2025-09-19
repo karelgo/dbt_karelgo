@@ -1,0 +1,92 @@
+version: 2
+
+models:
+  # Bronze Layer Models
+  - name: bronze_sales
+    description: "Raw sales transaction data ingested from source systems with minimal transformation"
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for each sales transaction"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Identifier linking to customer records"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Identifier linking to product catalog"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Number of items sold in this transaction"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Price per unit for the product"
+        tests:
+          - not_null
+      - name: transaction_date
+        description: "Date when the transaction occurred"
+        tests:
+          - not_null
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+      - name: _source_system
+        description: "Source system identifier for data lineage"
+        tests:
+          - not_null
+
+  - name: bronze_customers
+    description: "Raw customer data ingested from source systems"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "Customer's first name"
+      - name: last_name
+        description: "Customer's last name"
+      - name: email
+        description: "Customer's email address"
+      - name: registration_date
+        description: "Date when customer registered"
+        tests:
+          - not_null
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+
+  - name: bronze_products
+    description: "Raw product catalog data from source systems"
+    columns:
+      - name: product_id
+        description: "Unique identifier for each product"
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: "Name of the product"
+        tests:
+          - not_null
+      - name: category
+        description: "Product category classification"
+        tests:
+          - not_null
+      - name: cost_price
+        description: "Cost price of the product"
+        tests:
+          - not_null
+      - name: retail_price
+        description: "Retail selling price of the product"
+        tests:
+          - not_null
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null

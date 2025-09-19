@@ -1,0 +1,112 @@
+version: 2
+
+models:
+  # Silver Layer Models
+  - name: silver_sales_cleaned
+    description: "Cleaned and standardized sales transaction data with data quality validations"
+    columns:
+      - name: transaction_id
+        description: "Unique identifier for each sales transaction"
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Validated customer identifier"
+        tests:
+          - not_null
+      - name: product_id
+        description: "Validated product identifier"
+        tests:
+          - not_null
+      - name: total_amount
+        description: "Calculated total transaction amount (quantity * unit_price)"
+        tests:
+          - not_null
+      - name: transaction_date_clean
+        description: "Standardized transaction date"
+        tests:
+          - not_null
+      - name: is_valid_transaction
+        description: "Flag indicating if transaction passes all data quality checks"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+      - name: _silver_processed_at
+        description: "Timestamp when data was processed in silver layer"
+        tests:
+          - not_null
+
+  - name: silver_customers_cleaned
+    description: "Cleaned and standardized customer data with derived segmentation fields"
+    columns:
+      - name: customer_id
+        description: "Unique customer identifier"
+        tests:
+          - unique
+          - not_null
+      - name: full_name
+        description: "Concatenated and standardized full name"
+        tests:
+          - not_null
+      - name: email_clean
+        description: "Validated and standardized email address"
+      - name: customer_type_clean
+        description: "Standardized customer type classification"
+        tests:
+          - accepted_values:
+              values: ['PREMIUM', 'STANDARD']
+      - name: value_segment
+        description: "Customer value segmentation based on credit limit"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['High Value', 'Medium Value', 'Standard Value']
+      - name: customer_tenure_segment
+        description: "Customer tenure classification"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['New', 'Recent', 'Established']
+      - name: is_valid_customer
+        description: "Flag indicating if customer passes all data quality checks"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]
+
+  - name: silver_products_cleaned
+    description: "Cleaned product catalog data with calculated profit margins and inventory status"
+    columns:
+      - name: product_id
+        description: "Unique product identifier"
+        tests:
+          - unique
+          - not_null
+      - name: product_name_clean
+        description: "Standardized product name"
+        tests:
+          - not_null
+      - name: category_clean
+        description: "Standardized product category"
+        tests:
+          - not_null
+      - name: profit_margin_percent
+        description: "Calculated profit margin percentage"
+      - name: inventory_status
+        description: "Current inventory status classification"
+        tests:
+          - accepted_values:
+              values: ['Low Stock', 'Medium Stock', 'High Stock']
+      - name: price_tier
+        description: "Product price tier classification"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Premium', 'Standard', 'Budget']
+      - name: is_valid_product
+        description: "Flag indicating if product passes all data quality checks"
+        tests:
+          - not_null
+          - accepted_values:
+              values: [true, false]

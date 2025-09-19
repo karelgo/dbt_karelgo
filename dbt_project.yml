@@ -8,3 +8,33 @@ model-paths: ["models"]
 seed-paths: ["seeds"]
 target-path: "target"
 clean-targets: ["target", "dbt_packages"]
+
+# Medallion Architecture Configuration
+models:
+  mvp_dbt_project:
+    # Bronze layer - Raw data with minimal transformation
+    bronze:
+      +materialized: table
+      +tags: ["bronze", "raw"]
+      +description: "Bronze layer contains raw data with minimal transformation"
+    
+    # Silver layer - Cleaned and standardized data
+    silver:
+      +materialized: table
+      +tags: ["silver", "cleaned"]
+      +description: "Silver layer contains cleaned and standardized data"
+    
+    # Gold layer - Business-ready aggregated data
+    gold:
+      +materialized: table
+      +tags: ["gold", "business"]
+      +description: "Gold layer contains business-ready aggregated data"
+
+# Data quality and testing configuration
+tests:
+  +severity: error
+
+# Documentation configuration
+vars:
+  medallion_architecture_version: "1.0.0"
+  data_quality_enabled: true
