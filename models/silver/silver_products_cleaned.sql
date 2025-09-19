@@ -67,8 +67,8 @@ select
     
     -- Inventory status classification
     case 
-        when stock_quantity <= reorder_level then 'Low Stock'
-        when stock_quantity <= reorder_level * 2 then 'Medium Stock'
+        when stock_quantity_valid <= reorder_level_valid then 'Low Stock'
+        when stock_quantity_valid <= reorder_level_valid * 2 then 'Medium Stock'
         else 'High Stock'
     end as inventory_status,
     
