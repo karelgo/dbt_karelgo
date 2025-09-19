@@ -1,0 +1,102 @@
+name: dbt CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  dbt-run:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Configure dbt profile for Fabric
+        run: |
+          mkdir -p ~/.dbt
+          cat > ~/.dbt/profiles.yml <<'YML'
+          mvp_profile:
+            target: dev
+            outputs:
+              dev:
+                type: fabric
+                driver: 'ODBC Driver 18 for SQL Server'
+                server: ${{ secrets.FABRIC_SERVER }}
+                port: 1433
+                database: ${{ secrets.FABRIC_DATABASE }}
+                schema: dbo
+                authentication: ServicePrincipal
+                tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+                client_id: ${{ secrets.AZURE_CLIENT_ID }}
+                client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+                encrypt: true
+                trust_cert: false
+                threads: 4
+          YML
+
+      - name: Debug dbt connection
+        run: dbt debug
+
+      - name: Run dbt seed
+        run: dbt seed --full-refresh
+
+      - name: Run dbt models
+        run: dbt run --full-refresh
+
+      - name: Run dbt tests
+        run: dbt test
+
+      - name: Generate dbt docs
+        run: |
+          dbt docs generate
+          mkdir -p ./site
+          cp -r target/* ./site/
+
+      - name: Upload docs artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+
+  deploy-docs:
+    needs: dbt-run
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+      pull-requests: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy dbt docs to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Comment PR with docs link
+        if: github.event_name == 'pull_request'
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          header: dbt-docs
+          message: |
+            ✅ dbt docs have been deployed!
+
+            Browse the docs here: ${{ steps.deployment.outputs.page_url }}
