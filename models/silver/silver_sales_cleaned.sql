@@ -56,7 +56,7 @@ select
     
     -- Quality flags
     case 
-        when quantity > 0 and unit_price >= 0 and transaction_date is not null
+        when quantity_valid is not null and unit_price_valid is not null and transaction_date_clean is not null
         then true 
         else false 
     end as is_valid_transaction,
