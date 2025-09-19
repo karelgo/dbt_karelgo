@@ -102,9 +102,15 @@ select
     end as profitability_tier,
     
     -- Inventory turnover indicator
+    -- Estimate starting inventory as ending inventory + total sold (assuming all sold units were in stock at start)
+    -- Average inventory = (starting_inventory + ending_inventory) / 2
     case 
-        when p.stock_quantity_valid > 0 and pss.total_quantity_sold > 0
-        then round(pss.total_quantity_sold / nullif(p.stock_quantity_valid, 0), 2)
+        when p.stock_quantity_valid >= 0 and pss.total_quantity_sold > 0
+        then round(
+            pss.total_quantity_sold / nullif(
+                ((p.stock_quantity_valid + (p.stock_quantity_valid + pss.total_quantity_sold)) / 2), 0
+            ), 2
+        )
         else 0
     end as inventory_turnover_ratio,
     
