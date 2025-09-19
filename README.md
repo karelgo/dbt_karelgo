@@ -11,9 +11,6 @@ The bronze layer contains raw data with minimal processing and data lineage trac
 
 - **`bronze_personal_client`**: Raw demographic data from personal_client_data seed
 - **`bronze_benefit_data`**: Raw benefit program data from benefit_data seed  
-- **`bronze_customers`**: Existing customer data (from original setup)
-- **`bronze_products`**: Existing product data (from original setup)
-- **`bronze_sales`**: Existing sales data (from original setup)
 
 ### Silver Layer (Data Cleansing and Transformation)
 The silver layer performs data cleansing, standardization, and unification:
@@ -40,7 +37,6 @@ This implementation addresses the specific use case of linking demographic chara
 - Number of benefit recipients per region
 - Average benefit duration across different demographics
 - Transition success rates by benefit type and demographics
-- Regional spending and program effectiveness
 
 ## Structure
 - `models/` → Example models with schema tests
