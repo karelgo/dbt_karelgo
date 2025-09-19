@@ -1,84 +1,123 @@
-# dbt MVP Project
-
-This is a minimal dbt MVP setup that can run on **Microsoft Fabric**, **Databricks**, and **DuckDB**. 
-
-The project implements a **medallion architecture** for analyzing the relationship between demographic characteristics, benefit types, and transitions back to work.
-
-## Medallion Architecture
-
-### Bronze Layer (Raw Data Ingestion)
-The bronze layer contains raw data with minimal processing and data lineage tracking:
-
-- **`bronze_personal_client`**: Raw demographic data from personal_client_data seed
-- **`bronze_benefit_data`**: Raw benefit program data from benefit_data seed  
-
-### Silver Layer (Data Cleansing and Transformation)
-The silver layer performs data cleansing, standardization, and unification:
-
-- **`silver_demographics_benefit`**: Unified dataset joining demographic and benefit data with:
-  - Data standardization (education levels, gender, regions)
-  - Data quality flags (region mismatches, invalid amounts, questionable ages)
-  - Derived categorizations (age groups, experience levels)
-  - Missing value handling
-
-### Gold Layer (Aggregated Analytics)  
-The gold layer provides business-ready analytics and insights:
-
-- **`gold_benefit_analysis`**: Comprehensive analysis including:
-  - Regional analysis: Recipients, transitions, and benefit amounts by region
-  - Benefit type analysis: Success rates and duration by benefit type
-  - Demographic analysis: Outcomes by age group, gender, and education
-  - Experience analysis: Success rates by experience level and industry
-
-## Use Case: Demographics-Benefit Analysis
-
-This implementation addresses the specific use case of linking demographic characteristics to benefit types and analyzing transitions back to work. Key analytics include:
-
-- Number of benefit recipients per region
-- Average benefit duration across different demographics
-- Transition success rates by benefit type and demographics
-
-## Structure
-- `models/` → Example models with schema tests
-- `seeds/` → Example seed data
-- `requirements.txt` → Python dependencies
-- `.github/workflows/dbt.yml` → CI/CD pipeline for dbt (cloud databases)
-- `.github/workflows/dbt-duckdb-ci.yml` → CI/CD pipeline for dbt using DuckDB (fast testing)
-- `profiles.yml` → dbt connection config (generated dynamically in CI)
-
-## Usage
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run locally with: `dbt run`
-3. CI/CD runs on push/PR and deploys docs to GitHub Pages.
-
-### Local Development with DuckDB
-For fast local development and testing:
-```bash
-# Set up local profile for DuckDB
-mkdir -p ~/.dbt
-cat > ~/.dbt/profiles.yml <<EOF
-mvp_profile:
-  target: dev
-  outputs:
-    dev:
-      type: duckdb
-      path: 'database.duckdb'
-      threads: 4
-EOF
-
-# Run in shell
-source .venv/bin/activate
-
-# Run dbt commands
-dbt seed
-dbt run
 dbt test
 dbt docs generate
+_Placeholder: README content being refreshed._
+# dbt MVP Project
+
+Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**, **Databricks (Spark)**, **DuckDB**, and **SQLite**. It analyzes how demographic attributes relate to benefit program participation and transitions back to work.
+
+## Medallion Layers
+### Bronze (Raw Ingestion)
+- `bronze_personal_client` – demographics as received
+- `bronze_benefit_data` – benefit program facts
+
+### Silver (Standardization & Unification)
+- `silver_demographics_benefit` – joins bronze tables, normalizes categorical values, derives age & experience bands, computes actual duration, flags data quality.
+
+### Gold (Analytics)
+- `gold_benefit_analysis` – consolidated analytics across region, benefit type, demographics, and experience.
+
+## Key Metrics
+- Recipients & unique clients per region / benefit type
+- Transition success rates (percentage moving back to work)
+- Actual vs reported duration (months)
+- Outcomes segmented by age group, gender, education, experience level, industry
+
+## Structure
+- `models/bronze|silver|gold` – transformation SQL
+- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`
+- `macros/datetime_utils.sql` – cross‑database temporal helpers
+- `requirements.txt` – dbt-core + adapters
+- `dbt_project.yml` – tagging & materialization
+
+## Cross-Database Macros
+Defined in `macros/datetime_utils.sql` to avoid vendor-specific SQL:
+
+| Macro | Purpose | SQL Server / Fabric | Databricks | DuckDB | SQLite |
+|-------|---------|---------------------|------------|--------|--------|
+| `xdb_now()` | Current timestamp | `CAST(SYSDATETIME() AS datetime2(6))` | `current_timestamp()` | `now()` | `CURRENT_TIMESTAMP` |
+| `xdb_month_diff(a,b)` | Whole months between dates | `DATEDIFF(MONTH,a,b)` | `datediff(month,a,b)` | `date_diff('month',a,b)` | `CAST((julianday(b)-julianday(a))/30 AS INTEGER)` |
+
+All models now use these macros instead of hard-coded functions (`SYSDATETIME`, `DATEDIFF`, etc.).
+
+### Caveats
+- SQLite month diff is approximate (30-day divisor). For exact boundary logic, use a calendar dimension.
+- `datetime2(6)` down-casts on engines lacking high-precision timestamp types.
+- Keep adapter versions aligned with `dbt-core` to reduce incompatibility risk.
+
+## Installation
+```bash
+pip install -r requirements.txt
 ```
 
-### Cloud Deployment
-Switch between Fabric and Databricks by setting the GitHub secret `DBT_TARGET`.
+## Example Multi-Adapter Profile (`~/.dbt/profiles.yml`)
+```yaml
+mvp_profile:
+	target: duckdb
+	outputs:
+		duckdb:
+			type: duckdb
+			path: database.duckdb
+			threads: 4
+		sqlite:
+			type: sqlite
+			threads: 1
+			database: ./mvp_local.db
+			schema: main
+		fabric:
+			type: sqlserver
+			driver: 'ODBC Driver 18 for SQL Server'
+			server: <server>
+			port: 1433
+			user: <user>
+			password: <password>
+			database: <database>
+			schema: dbo
+			encrypt: true
+		databricks:
+			type: databricks
+			catalog: main
+			schema: default
+			host: https://<workspace-host>
+			http_path: /sql/1.0/warehouses/<warehouse-id>
+			token: <personal-access-token>
+			threads: 4
+```
 
-## CI/CD Pipelines
-- **DuckDB CI** (`.github/workflows/dbt-duckdb-ci.yml`): Fast testing with DuckDB on every push/PR
-- **Cloud CI** (`.github/workflows/dbt.yml`): Full deployment to cloud databases and docs to GitHub Pages
+## Running
+```bash
+dbt seed --target duckdb
+dbt run  --target duckdb
+dbt test --target duckdb
+
+dbt run --target sqlite
+dbt run --target fabric
+dbt run --target databricks
+```
+
+Or automatically switch by editing `target:` in the profile.
+
+## Layered Execution (Optional)
+```bash
+dbt seed --target <target>
+dbt run --select tag:bronze  --target <target>
+dbt run --select tag:silver  --target <target>
+dbt run --select tag:gold    --target <target>
+```
+
+## CI/CD (Suggested)
+- Lightweight: Run DuckDB seed/run/test on PR.
+- Full: Scheduled Fabric / Databricks run + docs generation.
+
+## Future Enhancements
+- Add SCD Type 2 dimension (snapshots or incremental) for client history.
+- Calendar dimension for precise month computations.
+- Generic & singular tests (unique, accepted values, not null) + exposures.
+- Macro unit tests via ephemeral models.
+
+## Troubleshooting
+- Missing relation errors: run `dbt seed` first.
+- Permission denied (Fabric/SQL Server): ensure CREATE/ALTER on target schema.
+- Function not found (e.g. SYSDATETIME) indicates a model not yet migrated to macros.
+
+## License
+Internal / evaluation use (add explicit license if distributing externally).

@@ -76,7 +76,7 @@ select
     -- Calculate actual duration if end_date exists, otherwise use reported duration
     case 
         when benefits.end_date is not null then 
-            DATEDIFF(MONTH, CAST(benefits.start_date AS date), CAST(benefits.end_date AS date))
+            {{ xdb_month_diff('CAST(benefits.start_date AS date)', 'CAST(benefits.end_date AS date)') }}
         else benefits.duration_months
     end as actual_duration_months,
     benefits.duration_months as reported_duration_months,
@@ -107,10 +107,10 @@ select
     
     -- Metadata
     CASE 
-        WHEN demographics.demographics_loaded_at >= benefits.benefits_loaded_at THEN CAST(demographics.demographics_loaded_at AS datetime2(6))
-        ELSE CAST(benefits.benefits_loaded_at AS datetime2(6))
+        WHEN demographics.demographics_loaded_at >= benefits.benefits_loaded_at THEN demographics.demographics_loaded_at
+        ELSE benefits.benefits_loaded_at
     END as _last_updated,
-    CAST(SYSDATETIME() AS datetime2(6)) as _processed_at
+    {{ xdb_now() }} as _processed_at
 
 from demographics
 inner join benefits on demographics.client_id = benefits.client_id
