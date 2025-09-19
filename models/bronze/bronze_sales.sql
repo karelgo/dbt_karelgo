@@ -29,6 +29,6 @@ select
     
     -- Data lineage metadata
     current_timestamp() as _loaded_at,
-    'raw_sales_seed' as _source_system
+    {{ var('source_system', 'raw_sales_seed') }} as _source_system
     
 from {{ ref('raw_sales') }}
