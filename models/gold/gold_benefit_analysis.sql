@@ -10,8 +10,11 @@
 */
 
 {{ config(
-    materialized='table',
-    tags=['gold', 'analytics', 'aggregations']
+        materialized='table',
+        tags=['gold', 'analytics', 'aggregations'],
+        column_types={
+            '_calculated_at': 'datetime2(6)'
+        }
 ) }}
 
 with base_data as (
@@ -23,9 +26,9 @@ regional_analysis as (
         region,
         count(*) as total_recipients,
         count(distinct client_id) as unique_clients,
-        count(case when transition_to_work = true then 1 end) as successful_transitions,
-        count(case when transition_to_work = false then 1 end) as no_transitions,
-        count(case when transition_to_work is null then 1 end) as unknown_transitions,
+    sum(case when transition_to_work = 1 then 1 else 0 end) as successful_transitions,
+    sum(case when transition_to_work = 0 then 1 else 0 end) as no_transitions,
+    sum(case when transition_to_work is null then 1 else 0 end) as unknown_transitions,
         avg(actual_duration_months) as avg_benefit_duration_months,
         avg(benefit_amount) as avg_benefit_amount,
         sum(benefit_amount) as total_benefit_amount,
@@ -39,8 +42,8 @@ benefit_type_analysis as (
     select
         benefit_type,
         count(*) as total_recipients,
-        count(case when transition_to_work = true then 1 end) as successful_transitions,
-        round(100.0 * count(case when transition_to_work = true then 1 end) / count(*), 2) as transition_success_rate_pct,
+    sum(case when transition_to_work = 1 then 1 else 0 end) as successful_transitions,
+    case when count(*) = 0 then 0 else round(100.0 * sum(case when transition_to_work = 1 then 1 else 0 end) / count(*), 2) end as transition_success_rate_pct,
         avg(actual_duration_months) as avg_duration_months,
         avg(benefit_amount) as avg_benefit_amount
     from base_data
@@ -53,8 +56,8 @@ demographic_analysis as (
         gender,
         education_level_standardized,
         count(*) as total_recipients,
-        count(case when transition_to_work = true then 1 end) as successful_transitions,
-        round(100.0 * count(case when transition_to_work = true then 1 end) / count(*), 2) as transition_success_rate_pct,
+    sum(case when transition_to_work = 1 then 1 else 0 end) as successful_transitions,
+    case when count(*) = 0 then 0 else round(100.0 * sum(case when transition_to_work = 1 then 1 else 0 end) / count(*), 2) end as transition_success_rate_pct,
         avg(actual_duration_months) as avg_duration_months
     from base_data
     group by age_group, gender, education_level_standardized
@@ -65,8 +68,8 @@ experience_analysis as (
         experience_level,
         industry,
         count(*) as total_recipients,
-        count(case when transition_to_work = true then 1 end) as successful_transitions,
-        round(100.0 * count(case when transition_to_work = true then 1 end) / count(*), 2) as transition_success_rate_pct,
+    sum(case when transition_to_work = 1 then 1 else 0 end) as successful_transitions,
+    case when count(*) = 0 then 0 else round(100.0 * sum(case when transition_to_work = 1 then 1 else 0 end) / count(*), 2) end as transition_success_rate_pct,
         avg(actual_duration_months) as avg_duration_months
     from base_data
     group by experience_level, industry
@@ -86,7 +89,7 @@ select
     total_benefit_amount,
     min_benefit_amount,
     max_benefit_amount,
-    current_localtimestamp() as _calculated_at
+    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
 from regional_analysis
 
 union all
@@ -104,7 +107,7 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    current_localtimestamp() as _calculated_at
+    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
 from benefit_type_analysis
 
 union all
@@ -122,7 +125,7 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    current_localtimestamp() as _calculated_at
+    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
 from demographic_analysis
 
 union all
@@ -140,5 +143,5 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    current_localtimestamp() as _calculated_at
+    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
 from experience_analysis

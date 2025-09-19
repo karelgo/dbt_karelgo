@@ -11,7 +11,10 @@
 
 {{ config(
     materialized='table',
-    tags=['bronze', 'benefits', 'raw']
+    tags=['bronze', 'benefits', 'raw'],
+    column_types={
+      '_loaded_at': 'datetime2(6)'
+    }
 ) }}
 
 select
@@ -26,7 +29,7 @@ select
     region,
     
     -- Data lineage metadata
-    current_localtimestamp() as _loaded_at,
+  CAST(SYSDATETIME() AS datetime2(6)) as _loaded_at,
     'benefit_data_seed' as _source_system
     
 from {{ ref('benefit_data') }}

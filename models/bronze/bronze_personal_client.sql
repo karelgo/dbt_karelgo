@@ -11,7 +11,10 @@
 
 {{ config(
     materialized='table',
-    tags=['bronze', 'demographics', 'raw']
+    tags=['bronze', 'demographics', 'raw'],
+    column_types={
+      '_loaded_at': 'datetime2(6)'
+    }
 ) }}
 
 select
@@ -26,7 +29,7 @@ select
     last_employer,
     
     -- Data lineage metadata
-    current_localtimestamp() as _loaded_at,
+  CAST(SYSDATETIME() AS datetime2(6)) as _loaded_at,
     'personal_client_data_seed' as _source_system
     
 from {{ ref('personal_client_data') }}

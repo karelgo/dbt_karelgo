@@ -1,9 +1,0 @@
-product_id,product_name,category,subcategory,brand,supplier,cost_price,retail_price,stock_quantity,reorder_level
-501,Laptop Pro,Electronics,Computers,TechCorp,Supplier A,999.99,1299.99,25,5
-502,Wireless Mouse,Electronics,Accessories,TechCorp,Supplier B,19.99,29.99,150,20
-503,Office Chair,Furniture,Seating,ComfortCo,Supplier C,179.99,249.99,30,8
-504,Desk Lamp,Furniture,Lighting,BrightLights,Supplier D,59.99,89.99,45,10
-505,Notebook Set,Office Supplies,Stationery,PaperPlus,Supplier E,9.99,15.99,200,50
-506,Ergonomic Keyboard,Electronics,Accessories,TechCorp,Supplier B,49.99,79.99,75,15
-507,Standing Desk,Furniture,Desks,ComfortCo,Supplier C,399.99,599.99,12,3
-508,Monitor 24",Electronics,Computers,ViewTech,Supplier F,199.99,299.99,40,8

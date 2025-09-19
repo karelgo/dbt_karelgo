@@ -10,8 +10,12 @@
 */
 
 {{ config(
-    materialized='table',
-    tags=['silver', 'demographics', 'benefits', 'unified']
+        materialized='table',
+        tags=['silver', 'demographics', 'benefits', 'unified'],
+        column_types={
+            '_last_updated': 'datetime2(6)',
+            '_processed_at': 'datetime2(6)'
+        }
 ) }}
 
 with demographics as (
@@ -36,9 +40,9 @@ benefits as (
         end_date,
         duration_months,
         case 
-            when lower(trim(transition_to_work)) in ('yes', 'y', 'true', '1') then true
-            when lower(trim(transition_to_work)) in ('no', 'n', 'false', '0') then false
-            else null
+        when lower(ltrim(rtrim(transition_to_work))) in ('yes','y','true','1') then 1
+        when lower(ltrim(rtrim(transition_to_work))) in ('no','n','false','0') then 0
+        else null
         end as transition_to_work,
         benefit_amount,
         region as benefit_region,
@@ -72,7 +76,7 @@ select
     -- Calculate actual duration if end_date exists, otherwise use reported duration
     case 
         when benefits.end_date is not null then 
-            datediff('month', cast(benefits.start_date as date), cast(benefits.end_date as date))
+            DATEDIFF(MONTH, CAST(benefits.start_date AS date), CAST(benefits.end_date AS date))
         else benefits.duration_months
     end as actual_duration_months,
     benefits.duration_months as reported_duration_months,
@@ -80,9 +84,9 @@ select
     benefits.benefit_amount,
     
     -- Data quality flags
-    case when demographics.region != benefits.benefit_region then true else false end as region_mismatch,
-    case when benefits.benefit_amount is null or benefits.benefit_amount <= 0 then true else false end as invalid_benefit_amount,
-    case when demographics.age < 18 or demographics.age > 100 then true else false end as questionable_age,
+    case when demographics.region != benefits.benefit_region then 1 else 0 end as region_mismatch,
+    case when benefits.benefit_amount is null or benefits.benefit_amount <= 0 then 1 else 0 end as invalid_benefit_amount,
+    case when demographics.age < 18 or demographics.age > 100 then 1 else 0 end as questionable_age,
     
     -- Derived metrics
     case 
@@ -102,8 +106,11 @@ select
     end as experience_level,
     
     -- Metadata
-    greatest(demographics.demographics_loaded_at, benefits.benefits_loaded_at) as _last_updated,
-    current_localtimestamp() as _processed_at
+    CASE 
+        WHEN demographics.demographics_loaded_at >= benefits.benefits_loaded_at THEN CAST(demographics.demographics_loaded_at AS datetime2(6))
+        ELSE CAST(benefits.benefits_loaded_at AS datetime2(6))
+    END as _last_updated,
+    CAST(SYSDATETIME() AS datetime2(6)) as _processed_at
 
 from demographics
 inner join benefits on demographics.client_id = benefits.client_id
