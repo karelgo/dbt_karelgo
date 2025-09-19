@@ -53,9 +53,9 @@ select
     
     -- Derived fields
     case 
-        when current_date() - cast(registration_date as date) <= 30 
+        when current_date() - registration_date_clean <= 30 
         then 'New'
-        when current_date() - cast(registration_date as date) <= 365 
+        when current_date() - registration_date_clean <= 365 
         then 'Recent'
         else 'Established'
     end as customer_tenure_segment,
