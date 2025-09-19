@@ -1,0 +1,29 @@
+# dbt artifacts
+target/
+logs/
+dbt_packages/
+
+# Database files
+*.db
+*.duckdb
+*.sqlite
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env
+.venv
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

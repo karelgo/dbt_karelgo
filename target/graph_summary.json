@@ -1,1 +1,0 @@
-{"_invocation_id": "af58e8f0-4282-402e-8ed0-9a2c360809fa", "linked": {"0": {"name": "model.mvp_dbt_project.example", "type": "model"}, "1": {"name": "seed.mvp_dbt_project.example_seed", "type": "seed"}}}

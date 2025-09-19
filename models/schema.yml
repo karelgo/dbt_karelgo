@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: example
+    description: "A simple example model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
+      - name: message
+        description: "A simple message field"
+        tests:
+          - not_null
