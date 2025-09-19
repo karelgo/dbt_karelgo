@@ -1,4 +1,4 @@
-id,age,gender,education_level,region,employment_history
+id,age,gender,education_level,region,industry,years_experience,last_employer
 1,30,Male,Bachelor,North,IT,5,Company A
 2,45,Female,Master,South,Finance,10,Company B
 3,28,Male,High School,East,Manufacturing,3,Company C
