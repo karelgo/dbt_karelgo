@@ -28,7 +28,7 @@ select
     store_location,
     
     -- Data lineage metadata
-    current_timestamp() as _loaded_at,
-    {{ var('source_system', 'raw_sales_seed') }} as _source_system
+    current_localtimestamp() as _loaded_at,
+    'raw_sales_seed' as _source_system
     
 from {{ ref('raw_sales') }}

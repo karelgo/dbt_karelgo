@@ -26,7 +26,7 @@ select
     credit_limit,
     
     -- Data lineage metadata
-    current_timestamp() as _loaded_at,
+    current_localtimestamp() as _loaded_at,
     'raw_customers_seed' as _source_system
     
 from {{ ref('raw_customers') }}

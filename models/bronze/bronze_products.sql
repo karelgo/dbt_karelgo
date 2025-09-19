@@ -28,7 +28,7 @@ select
     reorder_level,
     
     -- Data lineage metadata
-    current_timestamp() as _loaded_at,
+    current_localtimestamp() as _loaded_at,
     'raw_products_seed' as _source_system
     
 from {{ ref('raw_products') }}
