@@ -89,7 +89,7 @@ select
     total_benefit_amount,
     min_benefit_amount,
     max_benefit_amount,
-    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
+    {{ xdb_now() }} as _calculated_at
 from regional_analysis
 
 union all
@@ -107,7 +107,7 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
+    {{ xdb_now() }} as _calculated_at
 from benefit_type_analysis
 
 union all
@@ -125,7 +125,7 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
+    {{ xdb_now() }} as _calculated_at
 from demographic_analysis
 
 union all
@@ -143,5 +143,5 @@ select
     null as total_benefit_amount,
     null as min_benefit_amount,
     null as max_benefit_amount,
-    CAST(SYSDATETIME() AS datetime2(6)) as _calculated_at
+    {{ xdb_now() }} as _calculated_at
 from experience_analysis
