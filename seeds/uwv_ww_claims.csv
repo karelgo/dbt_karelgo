@@ -1,0 +1,13 @@
+claim_id,bsn,age,gender,education_level,municipality,province,industry_sector,job_title,salary_before_unemployment,claim_start_date,claim_end_date,benefit_duration_weeks,benefit_amount_weekly,reintegration_program,job_found_date,employer_before,employer_after,claim_reason
+WW2024001,123456789,34,Male,HBO,Amsterdam,Noord-Holland,ICT,Software Developer,4500.00,2024-01-15,2024-07-15,26,320.50,Yes,2024-06-20,TechCorp BV,InnovateTech NV,Contract ended
+WW2024002,987654321,45,Female,WO,Rotterdam,Zuid-Holland,Finance,Financial Analyst,5200.00,2024-02-01,2024-12-01,43,385.60,Yes,,ABN AMRO,,"Company restructuring"
+WW2024003,456789123,28,Male,MBO,Utrecht,Utrecht,Manufacturing,Machine Operator,3200.00,2024-03-10,2024-09-10,26,224.00,No,2024-08-15,ProduceMakers BV,TechFactory NV,Dismissal
+WW2024004,789123456,52,Female,HBO,Den Haag,Zuid-Holland,Healthcare,Nurse Manager,4800.00,2024-01-20,,52,336.00,Yes,,Haaglanden MC,,Medical leave transition
+WW2024005,321654987,38,Male,WO,Eindhoven,Noord-Brabant,Technology,R&D Engineer,6500.00,2024-04-01,2024-10-01,26,455.00,Yes,2024-09-15,ASML,Philips,Career change
+WW2024006,654987321,41,Female,MBO,Groningen,Groningen,Education,Teacher,3800.00,2024-02-15,2024-11-15,39,266.00,No,,Noordelijke Hogeschool,,Budget cuts
+WW2024007,147258369,29,Male,HBO,Tilburg,Noord-Brabant,Logistics,Supply Chain Coordinator,4200.00,2024-05-01,2024-11-01,26,294.00,Yes,2024-10-20,DHL,PostNL,Company closure
+WW2024008,258369147,36,Female,WO,Maastricht,Limburg,Legal,Legal Advisor,5800.00,2024-01-10,,52,406.00,Yes,,Loyens & Loeff,,Pregnancy leave
+WW2024009,369147258,43,Male,MBO,Nijmegen,Gelderland,Construction,Project Manager,4400.00,2024-03-20,2024-12-20,39,308.00,No,2024-11-30,BAM,VolkerWessels,Economic downturn
+WW2024010,741852963,31,Female,HBO,Breda,Noord-Brabant,Marketing,Marketing Manager,4600.00,2024-06-01,,26,322.00,Yes,,Unilever,,Performance issues
+WW2024011,852963741,47,Male,VMBO,Zwolle,Overijssel,Retail,Store Manager,3500.00,2024-02-28,2024-08-28,26,245.00,No,2024-07-25,Albert Heijn,Jumbo,Store closure
+WW2024012,963741852,33,Female,HBO,Enschede,Overijssel,Engineering,Process Engineer,4900.00,2024-04-15,,39,343.00,Yes,,Twente University,,Research funding ended

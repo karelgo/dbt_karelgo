@@ -1,0 +1,19 @@
+employer_id,employer_name,kvk_number,industry_sector,province,municipality,employee_count,annual_layoffs_2024,reintegration_partnerships
+EMP001,TechCorp BV,12345678,ICT,Noord-Holland,Amsterdam,250,15,Yes
+EMP002,ABN AMRO,98765432,Finance,Noord-Holland,Amsterdam,18500,120,Yes
+EMP003,ProduceMakers BV,45678912,Manufacturing,Utrecht,Utrecht,180,8,No
+EMP004,Haaglanden MC,78912345,Healthcare,Zuid-Holland,Den Haag,2500,25,Yes
+EMP005,ASML,32165498,Technology,Noord-Brabant,Eindhoven,35000,45,Yes
+EMP006,Noordelijke Hogeschool,65498732,Education,Groningen,Groningen,1200,18,Yes
+EMP007,DHL,14725836,Logistics,Noord-Brabant,Tilburg,850,12,No
+EMP008,Loyens & Loeff,25836914,Legal,Limburg,Maastricht,420,5,Yes
+EMP009,BAM,36914725,Construction,Gelderland,Nijmegen,2200,35,No
+EMP010,Unilever,74185296,Marketing,Noord-Brabant,Breda,1500,22,Yes
+EMP011,Albert Heijn,85296374,Retail,Overijssel,Zwolle,120000,850,Yes
+EMP012,Twente University,96374185,Education,Overijssel,Enschede,3200,28,Yes
+EMP013,InnovateTech NV,11122334,ICT,Noord-Holland,Amsterdam,85,2,No
+EMP014,TechFactory NV,44455566,Manufacturing,Utrecht,Utrecht,320,6,Yes
+EMP015,Philips,77788899,Technology,Noord-Brabant,Eindhoven,28000,95,Yes
+EMP016,PostNL,99988877,Logistics,Noord-Brabant,Tilburg,1800,45,Yes
+EMP017,VolkerWessels,66655544,Construction,Gelderland,Nijmegen,15000,180,Yes
+EMP018,Jumbo,33322211,Retail,Overijssel,Zwolle,85000,420,Yes

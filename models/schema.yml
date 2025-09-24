@@ -175,3 +175,181 @@ models:
         description: "Timestamp when analysis was calculated"
         tests:
           - not_null
+
+  # UWV Bronze Layer Models
+  - name: bronze_uwv_ww_claims
+    description: "Raw UWV WW (Werkloosheidswet) unemployment insurance claims data"
+    columns:
+      - name: claim_id
+        description: "Unique identifier for each WW claim"
+        tests:
+          - unique
+          - not_null
+      - name: citizen_service_number
+        description: "BSN (Burgerservicenummer) - Dutch social security number"
+        tests:
+          - not_null
+      - name: age
+        description: "Claimant's age in years"
+        tests:
+          - not_null
+      - name: gender
+        description: "Claimant's gender"
+        tests:
+          - not_null
+      - name: education_level
+        description: "Dutch education level (WO, HBO, MBO, etc.)"
+        tests:
+          - not_null
+      - name: municipality
+        description: "Dutch municipality where claimant resides"
+        tests:
+          - not_null
+      - name: province
+        description: "Dutch province where claimant resides"
+        tests:
+          - not_null
+      - name: industry_sector
+        description: "Industry sector of previous employment"
+      - name: salary_before_unemployment
+        description: "Monthly salary before unemployment in euros"
+      - name: claim_start_date
+        description: "Date when WW claim started"
+        tests:
+          - not_null
+      - name: benefit_duration_weeks
+        description: "Duration of benefit entitlement in weeks"
+        tests:
+          - not_null
+      - name: benefit_amount_weekly
+        description: "Weekly WW benefit amount in euros"
+        tests:
+          - not_null
+      - name: reintegration_program
+        description: "Boolean flag indicating participation in reintegration program"
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+      - name: _source_system
+        description: "Source system identifier for data lineage"
+        tests:
+          - not_null
+
+  - name: bronze_uwv_employer_data
+    description: "Raw UWV employer data with characteristics and reintegration partnerships"
+    columns:
+      - name: employer_id
+        description: "Unique identifier for each employer"
+        tests:
+          - unique
+          - not_null
+      - name: employer_name
+        description: "Legal name of the employer"
+        tests:
+          - not_null
+      - name: kvk_number
+        description: "KvK (Chamber of Commerce) registration number"
+        tests:
+          - not_null
+      - name: industry_sector  
+        description: "Primary industry sector of the employer"
+        tests:
+          - not_null
+      - name: province
+        description: "Dutch province where employer is located"
+        tests:
+          - not_null
+      - name: employee_count
+        description: "Total number of employees"
+        tests:
+          - not_null
+      - name: annual_layoffs_2024
+        description: "Number of layoffs in 2024"
+        tests:
+          - not_null
+      - name: reintegration_partnerships
+        description: "Boolean flag indicating employer partnerships with reintegration services"
+      - name: _loaded_at
+        description: "Timestamp when data was loaded into bronze layer"
+        tests:
+          - not_null
+
+  # UWV Silver Layer Models  
+  - name: silver_uwv_claims_analysis
+    description: "Unified UWV claims data with employer information and derived analytics"
+    columns:
+      - name: claim_id
+        description: "Unique identifier for each WW claim"
+        tests:
+          - unique
+          - not_null
+      - name: citizen_service_number
+        description: "BSN (Burgerservicenummer) - Dutch social security number"
+        tests:
+          - not_null
+      - name: age
+        description: "Claimant's age in years"
+        tests:
+          - not_null
+      - name: education_level_standardized
+        description: "Standardized Dutch education level descriptions"
+        tests:
+          - not_null
+      - name: province
+        description: "Standardized Dutch province name"
+        tests:
+          - not_null
+      - name: job_found
+        description: "Boolean flag indicating whether claimant found new employment"
+        tests:
+          - not_null
+      - name: reintegration_success
+        description: "Boolean flag indicating successful reintegration within benefit period"
+      - name: age_group
+        description: "Age group categorization for analysis"
+        tests:
+          - not_null
+      - name: salary_bracket
+        description: "Salary range categorization"
+        tests:
+          - not_null
+      - name: employer_size_category
+        description: "Employer size categorization based on employee count"
+      - name: total_benefit_amount
+        description: "Total WW benefit amount paid in euros"
+        tests:
+          - not_null
+      - name: actual_claim_duration_weeks
+        description: "Calculated actual claim duration in weeks"
+
+  # UWV Gold Layer Models
+  - name: gold_uwv_analytics
+    description: "Executive analytics for UWV WW program effectiveness and policy insights"
+    columns:
+      - name: analysis_type
+        description: "Type of analysis (provincial, industry, demographics, etc.)"
+        tests:
+          - not_null
+      - name: dimension_1
+        description: "Primary dimension for analysis"
+        tests:
+          - not_null
+      - name: total_count
+        description: "Total number of claims or entities in this analysis group"
+        tests:
+          - not_null
+      - name: successful_reintegrations
+        description: "Number of successful reintegrations to employment"
+        tests:
+          - not_null
+      - name: success_rate_pct
+        description: "Percentage success rate for reintegration"
+        tests:
+          - not_null
+      - name: avg_claim_duration_weeks
+        description: "Average claim duration in weeks for this group"
+      - name: _calculated_at
+        description: "Timestamp when analytics were calculated"
+        tests:
+          - not_null
