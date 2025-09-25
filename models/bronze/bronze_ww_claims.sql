@@ -5,7 +5,7 @@
   This layer stores WW claims information as received from  systems, with minimal processing 
   and added metadata for data lineage.
   
-  Data Source: _ww_claims seed file
+  Data Source: ww_claims seed file
   Next Layer: Silver layer (silver_claims_analysis)
   
   Context: WW (Werkloosheidswet) is the Dutch unemployment insurance law that provides temporary 
@@ -56,6 +56,6 @@ select
     
     -- Data lineage metadata
     {{ xdb_now() }} as _loaded_at,
-    '_ww_claims_seed' as _source_system
+    'ww_claims_seed' as _source_system
     
-from {{ ref('_ww_claims') }}
+from {{ ref('ww_claims') }}
