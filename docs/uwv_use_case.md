@@ -1,13 +1,13 @@
-# UWV Use Case: Dutch Unemployment Insurance Analytics
+#  Use Case: Dutch Unemployment Insurance Analytics
 
 ## Overview
 
-This use case demonstrates the analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from UWV (Uitvoeringsinstituut Werknemersverzekeringen), the Dutch Employee Insurance Agency. The implementation follows the existing medallion architecture (Bronze → Silver → Gold) to provide comprehensive insights into unemployment patterns, reintegration program effectiveness, and policy outcomes.
+This use case demonstrates the analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from  (Uitvoeringsinstituut Werknemersverzekeringen), the Dutch Employee Insurance Agency. The implementation follows the existing medallion architecture (Bronze → Silver → Gold) to provide comprehensive insights into unemployment patterns, reintegration program effectiveness, and policy outcomes.
 
 ## Business Context
 
-### About UWV
-UWV is the Dutch government agency responsible for:
+### About 
+ is the Dutch government agency responsible for:
 - Managing unemployment insurance (WW - Werkloosheidswet)
 - Providing disability benefits (WIA/WAO)
 - Supporting job seekers and employers
@@ -15,7 +15,7 @@ UWV is the Dutch government agency responsible for:
 - Collecting labor market data
 
 ### Business Value
-This analytics solution enables UWV to:
+This analytics solution enables  to:
 - **Monitor Program Effectiveness**: Track reintegration success rates across demographics, regions, and industries
 - **Optimize Resource Allocation**: Identify which programs and regions need more support
 - **Support Policy Decisions**: Provide data-driven insights for unemployment insurance policy
@@ -27,14 +27,14 @@ This analytics solution enables UWV to:
 ### Medallion Architecture Implementation
 
 #### Bronze Layer (Raw Data Ingestion)
-- **`bronze_uwv_ww_claims`**: Raw WW claims data with Dutch-specific fields
-- **`bronze_uwv_employer_data`**: Raw employer characteristics and partnership information
+- **`bronze_ww_claims`**: Raw WW claims data with Dutch-specific fields
+- **`bronze_employer_data`**: Raw employer characteristics and partnership information
 
 #### Silver Layer (Data Transformation & Unification)
-- **`silver_uwv_claims_analysis`**: Unified claims and employer data with standardized Dutch education levels, geographic regions, and derived analytics
+- **`silver_claims_analysis`**: Unified claims and employer data with standardized Dutch education levels, geographic regions, and derived analytics
 
 #### Gold Layer (Business Analytics)
-- **`gold_uwv_analytics`**: Executive dashboard metrics for policy analysis and program evaluation
+- **`gold_analytics`**: Executive dashboard metrics for policy analysis and program evaluation
 
 ## Key Features
 
@@ -56,7 +56,7 @@ This analytics solution enables UWV to:
 
 ### Core Entities
 
-#### WW Claims (`uwv_ww_claims.csv`)
+#### WW Claims (`_ww_claims.csv`)
 ```csv
 claim_id,bsn,age,gender,education_level,municipality,province,industry_sector,
 job_title,salary_before_unemployment,claim_start_date,claim_end_date,
@@ -64,7 +64,7 @@ benefit_duration_weeks,benefit_amount_weekly,reintegration_program,
 job_found_date,employer_before,employer_after,claim_reason
 ```
 
-#### Employer Data (`uwv_employer_data.csv`)
+#### Employer Data (`_employer_data.csv`)
 ```csv
 employer_id,employer_name,kvk_number,industry_sector,province,municipality,
 employee_count,annual_layoffs_2024,reintegration_partnerships
@@ -85,7 +85,7 @@ SELECT
     successful_reintegrations,
     success_rate_pct,
     avg_claim_duration_weeks
-FROM gold_uwv_analytics 
+FROM gold_analytics 
 WHERE analysis_type = 'provincial'
 ORDER BY success_rate_pct DESC;
 ```
@@ -97,7 +97,7 @@ SELECT
     total_count as layoffs,
     success_rate_pct as reintegration_rate,
     avg_claim_duration_weeks
-FROM gold_uwv_analytics 
+FROM gold_analytics 
 WHERE analysis_type = 'industry'
 ORDER BY total_count DESC;
 ```
@@ -110,7 +110,7 @@ SELECT
     dimension_2 as gender,
     success_rate_pct,
     total_count
-FROM gold_uwv_analytics 
+FROM gold_analytics 
 WHERE analysis_type = 'demographics'
 ORDER BY success_rate_pct DESC;
 ```
@@ -123,12 +123,12 @@ SELECT
     total_count as total_layoffs,
     success_rate_pct,
     additional_metric_1 as employers_with_partnerships
-FROM gold_uwv_analytics 
+FROM gold_analytics 
 WHERE analysis_type = 'employer_characteristics'
 ORDER BY success_rate_pct DESC;
 ```
 
-## Running the UWV Use Case
+## Running the  Use Case
 
 ### Prerequisites
 1. dbt-core with supported adapters (DuckDB, SQL Server, Databricks, SQLite)
@@ -136,31 +136,31 @@ ORDER BY success_rate_pct DESC;
 
 ### Execution Steps
 ```bash
-# 1. Seed the UWV data
-dbt seed --select uwv_ww_claims uwv_employer_data
+# 1. Seed the  data
+dbt seed --select _ww_claims _employer_data
 
 # 2. Run Bronze layer (data ingestion)
-dbt run --select tag:uwv tag:bronze
+dbt run --select tag: tag:bronze
 
 # 3. Run Silver layer (data transformation)
-dbt run --select silver_uwv_claims_analysis
+dbt run --select silver_claims_analysis
 
 # 4. Run Gold layer (analytics)
-dbt run --select gold_uwv_analytics
+dbt run --select gold_analytics
 
-# 5. Run all UWV models together
-dbt run --select +gold_uwv_analytics
+# 5. Run all  models together
+dbt run --select +gold_analytics
 
 # 6. Test data quality
-dbt test --select +gold_uwv_analytics
+dbt test --select +gold_analytics
 ```
 
 ### Layered Execution
 ```bash
 # Execute by medallion layer
-dbt run --select tag:uwv tag:bronze
-dbt run --select tag:uwv tag:silver  
-dbt run --select tag:uwv tag:gold
+dbt run --select tag: tag:bronze
+dbt run --select tag: tag:silver  
+dbt run --select tag: tag:gold
 ```
 
 ## Key Metrics & KPIs
@@ -197,7 +197,7 @@ dbt run --select tag:uwv tag:gold
 ## Technical Implementation Notes
 
 ### Cross-Database Compatibility
-The UWV models use the existing cross-database macros:
+The  models use the existing cross-database macros:
 - `xdb_now()`: Current timestamp across all supported databases
 - `xdb_month_diff()`: Month calculations for claim duration analysis
 
@@ -237,12 +237,12 @@ The UWV models use the existing cross-database macros:
 - Audit trails for data lineage
 
 ### Reporting Standards
-- Alignment with UWV annual reporting requirements
+- Alignment with  annual reporting requirements
 - Integration with Dutch government data standards
 - Support for CBS (Statistics Netherlands) data sharing protocols
 
 ## Conclusion
 
-The UWV use case demonstrates how modern data analytics can support evidence-based policy making in social security systems. By leveraging the medallion architecture, this solution provides scalable, maintainable, and insightful analysis of unemployment insurance effectiveness, supporting UWV's mission to help Dutch citizens transition back to meaningful employment.
+The  use case demonstrates how modern data analytics can support evidence-based policy making in social security systems. By leveraging the medallion architecture, this solution provides scalable, maintainable, and insightful analysis of unemployment insurance effectiveness, supporting 's mission to help Dutch citizens transition back to meaningful employment.
 
 The implementation showcases Dutch-specific data handling while maintaining compatibility with multiple database platforms, making it a robust foundation for national employment policy analysis and program optimization.

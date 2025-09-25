@@ -1,12 +1,12 @@
 /*
-  Bronze Layer - UWV WW (Werkloosheidswet) Claims Data
+  Bronze Layer -  WW (Werkloosheidswet) Claims Data
   
-  Purpose: Ingests raw UWV unemployment insurance claims data from the Dutch Employee Insurance Agency.
-  This layer stores WW claims information as received from UWV systems, with minimal processing 
+  Purpose: Ingests raw  unemployment insurance claims data from the Dutch Employee Insurance Agency.
+  This layer stores WW claims information as received from  systems, with minimal processing 
   and added metadata for data lineage.
   
-  Data Source: uwv_ww_claims seed file
-  Next Layer: Silver layer (silver_uwv_claims_analysis)
+  Data Source: _ww_claims seed file
+  Next Layer: Silver layer (silver_claims_analysis)
   
   Context: WW (Werkloosheidswet) is the Dutch unemployment insurance law that provides temporary 
   income support for unemployed workers who meet certain conditions.
@@ -14,7 +14,7 @@
 
 {{ config(
     materialized='table',
-    tags=['bronze', 'uwv', 'ww_claims', 'raw'],
+    tags=['bronze', '', 'ww_claims', 'raw'],
     column_types={
       '_loaded_at': 'datetime2(6)'
     }
@@ -56,6 +56,6 @@ select
     
     -- Data lineage metadata
     {{ xdb_now() }} as _loaded_at,
-    'uwv_ww_claims_seed' as _source_system
+    '_ww_claims_seed' as _source_system
     
-from {{ ref('uwv_ww_claims') }}
+from {{ ref('_ww_claims') }}

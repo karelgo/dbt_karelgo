@@ -1,27 +1,27 @@
 /*
-  Gold Layer - UWV Analytics Dashboard
+  Gold Layer -  Analytics Dashboard
   
-  Purpose: Aggregates UWV unemployment insurance metrics for executive reporting and 
+  Purpose: Aggregates  unemployment insurance metrics for executive reporting and 
   policy analysis. Provides key insights on reintegration success, regional patterns,
   employer characteristics, and program effectiveness.
   
-  Data Source: silver_uwv_claims_analysis
-  Use Case: UWV executive dashboard, policy analysis, and performance monitoring
+  Data Source: silver_claims_analysis
+  Use Case:  executive dashboard, policy analysis, and performance monitoring
   
-  Context: Supports Dutch employment policy decisions and UWV program evaluation
+  Context: Supports Dutch employment policy decisions and  program evaluation
   with focus on Werkloosheidswet (unemployment insurance) effectiveness.
 */
 
 {{ config(
     materialized='table',
-    tags=['gold', 'uwv', 'analytics', 'dashboard'],
+    tags=['gold', '', 'analytics', 'dashboard'],
     column_types={
         '_calculated_at': 'datetime2(6)'
     }
 ) }}
 
 with base_data as (
-    select * from {{ ref('silver_uwv_claims_analysis') }}
+    select * from {{ ref('silver_claims_analysis') }}
 ),
 
 provincial_analysis as (

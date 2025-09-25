@@ -1,12 +1,12 @@
 /*
-  Silver Layer - UWV Claims Analysis
+  Silver Layer -  Claims Analysis
   
-  Purpose: Joins UWV WW claims data with employer information to create a unified dataset
+  Purpose: Joins  WW claims data with employer information to create a unified dataset
   for analyzing unemployment patterns, reintegration success, and employer characteristics.
   Performs data cleansing, standardization, and derives meaningful metrics.
   
-  Data Sources: bronze_uwv_ww_claims, bronze_uwv_employer_data
-  Next Layer: Gold layer (gold_uwv_analytics)
+  Data Sources: bronze_ww_claims, bronze_employer_data
+  Next Layer: Gold layer (gold_analytics)
   
   Context: This model supports analysis of Dutch unemployment insurance effectiveness,
   regional unemployment patterns, and reintegration program success rates.
@@ -14,7 +14,7 @@
 
 {{ config(
     materialized='table',
-    tags=['silver', 'uwv', 'claims_analysis', 'transformed'],
+    tags=['silver', '', 'claims_analysis', 'transformed'],
     column_types={
         '_last_updated': 'datetime2(6)',
         '_processed_at': 'datetime2(6)'
@@ -43,7 +43,7 @@ with claims as (
         reintegration_program,
         job_found_date,
         _loaded_at as claims_loaded_at
-    from {{ ref('bronze_uwv_ww_claims') }}
+    from {{ ref('bronze_ww_claims') }}
 ),
 
 employers_before as (
@@ -57,7 +57,7 @@ employers_before as (
         annual_layoffs_2024,
         reintegration_partnerships,
         _loaded_at as employer_loaded_at
-    from {{ ref('bronze_uwv_employer_data') }}
+    from {{ ref('bronze_employer_data') }}
 ),
 
 employers_after as (
@@ -66,7 +66,7 @@ employers_after as (
         industry_sector as new_employer_industry,
         province as new_employer_province,
         employee_count as new_employer_size
-    from {{ ref('bronze_uwv_employer_data') }}
+    from {{ ref('bronze_employer_data') }}
 )
 
 select

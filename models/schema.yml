@@ -176,9 +176,9 @@ models:
         tests:
           - not_null
 
-  # UWV Bronze Layer Models
-  - name: bronze_uwv_ww_claims
-    description: "Raw UWV WW (Werkloosheidswet) unemployment insurance claims data"
+  #  Bronze Layer Models
+  - name: bronze_ww_claims
+    description: "Raw  WW (Werkloosheidswet) unemployment insurance claims data"
     columns:
       - name: claim_id
         description: "Unique identifier for each WW claim"
@@ -236,8 +236,8 @@ models:
         tests:
           - not_null
 
-  - name: bronze_uwv_employer_data
-    description: "Raw UWV employer data with characteristics and reintegration partnerships"
+  - name: bronze_employer_data
+    description: "Raw  employer data with characteristics and reintegration partnerships"
     columns:
       - name: employer_id
         description: "Unique identifier for each employer"
@@ -275,9 +275,9 @@ models:
         tests:
           - not_null
 
-  # UWV Silver Layer Models  
-  - name: silver_uwv_claims_analysis
-    description: "Unified UWV claims data with employer information and derived analytics"
+  #  Silver Layer Models  
+  - name: silver_claims_analysis
+    description: "Unified  claims data with employer information and derived analytics"
     columns:
       - name: claim_id
         description: "Unique identifier for each WW claim"
@@ -323,9 +323,9 @@ models:
       - name: actual_claim_duration_weeks
         description: "Calculated actual claim duration in weeks"
 
-  # UWV Gold Layer Models
-  - name: gold_uwv_analytics
-    description: "Executive analytics for UWV WW program effectiveness and policy insights"
+  #  Gold Layer Models
+  - name: gold_analytics
+    description: "Executive analytics for  WW program effectiveness and policy insights"
     columns:
       - name: analysis_type
         description: "Type of analysis (provincial, industry, demographics, etc.)"

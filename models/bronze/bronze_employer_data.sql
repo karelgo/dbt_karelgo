@@ -1,12 +1,12 @@
 /*
-  Bronze Layer - UWV Employer Data
+  Bronze Layer -  Employer Data
   
-  Purpose: Ingests raw employer data from UWV systems, including information about companies
+  Purpose: Ingests raw employer data from  systems, including information about companies
   that have employees receiving unemployment benefits, their characteristics, and 
   reintegration partnerships.
   
-  Data Source: uwv_employer_data seed file
-  Next Layer: Silver layer (silver_uwv_claims_analysis)
+  Data Source: _employer_data seed file
+  Next Layer: Silver layer (silver_claims_analysis)
   
   Context: This data helps analyze patterns in unemployment by employer characteristics
   and supports reintegration program effectiveness analysis.
@@ -14,7 +14,7 @@
 
 {{ config(
     materialized='table',
-    tags=['bronze', 'uwv', 'employers', 'raw'],
+    tags=['bronze', '', 'employers', 'raw'],
     column_types={
       '_loaded_at': 'datetime2(6)'
     }
@@ -42,6 +42,6 @@ select
     
     -- Data lineage metadata
     {{ xdb_now() }} as _loaded_at,
-    'uwv_employer_data_seed' as _source_system
+    '_employer_data_seed' as _source_system
     
-from {{ ref('uwv_employer_data') }}
+from {{ ref('_employer_data') }}

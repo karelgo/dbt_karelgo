@@ -7,29 +7,29 @@ Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**
 ### 1. General Benefit Analysis
 Analyzes demographic patterns in benefit program participation and work transition success rates across different regions and benefit types.
 
-### 2. UWV (Dutch Unemployment Insurance) Analytics
-**NEW**: Comprehensive analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from UWV (Uitvoeringsinstituut Werknemersverzekeringen). This use case provides specialized analytics for:
+### 2.  (Dutch Unemployment Insurance) Analytics
+**NEW**: Comprehensive analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from  (Uitvoeringsinstituut Werknemersverzekeringen). This use case provides specialized analytics for:
 - Reintegration program effectiveness
 - Provincial unemployment patterns  
 - Employer characteristics and partnership impact
 - Dutch-specific education level and geographic analysis
 
-📋 **[View detailed UWV use case documentation](docs/uwv_use_case.md)**
+📋 **[View detailed  use case documentation](docs/_use_case.md)**
 
 ## Medallion Layers
 ### Bronze (Raw Ingestion)
 - `bronze_personal_client` – demographics as received
 - `bronze_benefit_data` – benefit program facts  
-- `bronze_uwv_ww_claims` – UWV unemployment insurance claims (Dutch WW data)
-- `bronze_uwv_employer_data` – UWV employer characteristics and partnerships
+- `bronze_ww_claims` –  unemployment insurance claims (Dutch WW data)
+- `bronze_employer_data` –  employer characteristics and partnerships
 
 ### Silver (Standardization & Unification)
 - `silver_demographics_benefit` – joins bronze tables, normalizes categorical values, derives age & experience bands, computes actual duration, flags data quality.
-- `silver_uwv_claims_analysis` – unified UWV claims with employer data, Dutch education standardization, reintegration analytics
+- `silver_claims_analysis` – unified  claims with employer data, Dutch education standardization, reintegration analytics
 
 ### Gold (Analytics)
 - `gold_benefit_analysis` – consolidated analytics across region, benefit type, demographics, and experience.
-- `gold_uwv_analytics` – UWV executive dashboard metrics for policy analysis and reintegration program evaluation
+- `gold_analytics` –  executive dashboard metrics for policy analysis and reintegration program evaluation
 
 ## Key Metrics
 ### General Benefit Analysis
@@ -38,7 +38,7 @@ Analyzes demographic patterns in benefit program participation and work transiti
 - Actual vs reported duration (months)
 - Outcomes segmented by age group, gender, education, experience level, industry
 
-### UWV-Specific Metrics  
+### -Specific Metrics  
 - WW claim reintegration success rates by province and industry
 - Employer partnership effectiveness analysis
 - Dutch education level impact on employment outcomes
@@ -47,9 +47,9 @@ Analyzes demographic patterns in benefit program participation and work transiti
 
 ## Structure
 - `models/bronze|silver|gold` – transformation SQL
-- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`, `uwv_ww_claims.csv`, `uwv_employer_data.csv`
+- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`, `_ww_claims.csv`, `_employer_data.csv`
 - `macros/datetime_utils.sql` – cross‑database temporal helpers
-- `docs/` – use case documentation including detailed UWV analytics guide
+- `docs/` – use case documentation including detailed  analytics guide
 - `requirements.txt` – dbt-core + adapters
 - `dbt_project.yml` – tagging & materialization
 
@@ -116,7 +116,7 @@ dbt test --target duckdb
 
 # Run specific use cases
 dbt run --select +gold_benefit_analysis      # General benefit analysis
-dbt run --select +gold_uwv_analytics         # UWV unemployment insurance analysis
+dbt run --select +gold_analytics         #  unemployment insurance analysis
 
 # Cross-platform execution
 dbt run --target sqlite
@@ -133,10 +133,10 @@ dbt run --select tag:bronze  --target <target>
 dbt run --select tag:silver  --target <target>
 dbt run --select tag:gold    --target <target>
 
-# UWV-specific execution
-dbt run --select tag:uwv tag:bronze   --target <target>
-dbt run --select tag:uwv tag:silver   --target <target>  
-dbt run --select tag:uwv tag:gold     --target <target>
+# -specific execution
+dbt run --select tag: tag:bronze   --target <target>
+dbt run --select tag: tag:silver   --target <target>  
+dbt run --select tag: tag:gold     --target <target>
 ```
 
 ## CI/CD (Suggested)
