@@ -7,7 +7,7 @@
 ) }}
 
 with base_data as (
-    select * from {{ ref('silver_demographics_benefit') }}
+    select * from {{ ref('silver_demografie_uitkering') }}
 ),
 
 regional_analysis as (

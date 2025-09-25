@@ -18,7 +18,7 @@ with demographics as (
         years_experience,
         last_employer,
         _loaded_at as demographics_loaded_at
-    from {{ ref('bronze_personal_client') }}
+    from {{ ref('brons_persoonlijke_client_data') }}
 ),
 
 benefits as (
@@ -36,7 +36,7 @@ benefits as (
         benefit_amount,
         region as benefit_region,
         _loaded_at as benefits_loaded_at
-    from {{ ref('bronze_benefit_data') }}
+    from {{ ref('brons_uitkerings_data') }}
 )
 
 select

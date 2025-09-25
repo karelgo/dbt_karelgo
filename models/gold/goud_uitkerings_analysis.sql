@@ -1,24 +1,23 @@
 /*
-  Gold Layer - Benefit Analysis Aggregations
+    Goudlaag - Aggregaties voor uitkeringsanalyse
   
-  Purpose: Aggregates metrics for analytics including benefit recipients per region,
-  average benefit duration, and transitions back to work analysis. This layer provides
-  business-ready insights for stakeholders and reporting.
+    Doel: Berekent kerncijfers zoals ontvangers per regio, gemiddelde duur,
+    en terugkeer-naar-werk analyse. Deze laag levert rapportageklare inzichten.
   
-  Data Source: silver_demographics_benefit
-  Use Case: Analytics dashboard for benefit program effectiveness
+    Databron: silver_demografie_uitkering
+    Gebruik: Analytics-dashboard voor effectiviteit van regelingen
 */
 
 {{ config(
         materialized='table',
-        tags=['gold', 'analytics', 'aggregations'],
+    tags=['goud', 'analytics', 'aggregaties'],
         column_types={
             '_calculated_at': 'datetime2(6)'
         }
 ) }}
 
 with base_data as (
-    select * from {{ ref('silver_demographics_benefit') }}
+    select * from {{ ref('silver_demografie_uitkering') }}
 ),
 
 regional_analysis as (
@@ -77,7 +76,7 @@ experience_analysis as (
 
 -- Combine all analysis into a unified gold table
 select
-    'regional' as analysis_type,
+    'regio' as analysis_type,
     region as dimension_1,
     null as dimension_2,
     null as dimension_3,
@@ -95,7 +94,7 @@ from regional_analysis
 union all
 
 select
-    'benefit_type' as analysis_type,
+    'regelingstype' as analysis_type,
     benefit_type as dimension_1,
     null as dimension_2,
     null as dimension_3,
@@ -113,7 +112,7 @@ from benefit_type_analysis
 union all
 
 select
-    'demographics' as analysis_type,
+    'demografie' as analysis_type,
     age_group as dimension_1,
     gender as dimension_2,
     education_level_standardized as dimension_3,
@@ -131,7 +130,7 @@ from demographic_analysis
 union all
 
 select
-    'experience' as analysis_type,
+    'ervaring' as analysis_type,
     experience_level as dimension_1,
     industry as dimension_2,
     null as dimension_3,

@@ -1,0 +1,6 @@
+id,age,gender,education_level,region,industry,years_experience,last_employer
+1,30,Man,Bachelor,Noord,IT,5,Bedrijf A
+2,45,Vrouw,Master,Zuid,Financiën,10,Bedrijf B
+3,28,Man,Middelbare school,Oost,Productie,3,Bedrijf C
+4,50,Vrouw,Bachelor,West,Gezondheidszorg,20,Bedrijf D
+5,38,Man,PhD,Noord,Onderwijs,15,Bedrijf E

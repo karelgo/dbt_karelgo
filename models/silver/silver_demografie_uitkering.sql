@@ -1,17 +1,17 @@
 /*
-  Silver Layer - Demographics and Benefit Data Unified
+    Zilverlaag - Geünificeerde demografie- en uitkeringsdata
   
-  Purpose: Joins personal demographics data with benefit details to create
-  a unified dataset. Performs data cleansing, standardization, and handles
-  missing values for improved data quality.
+    Doel: Voegt demografische cliëntgegevens samen met uitkeringsdetails
+    tot één dataset. Voert opschoning en standaardisatie uit, en behandelt
+    ontbrekende waarden voor betere datakwaliteit.
   
-  Data Sources: bronze_personal_client, bronze_benefit_data
-  Next Layer: Gold layer (gold_benefit_analysis)
+        Databronnen: brons_persoonlijke_client_data, brons_uitkerings_data
+    Volgende laag: Goud (goud_uitkerings_analysis)
 */
 
 {{ config(
         materialized='table',
-        tags=['silver', 'demographics', 'benefits', 'unified'],
+    tags=['zilver', 'demografie', 'uitkeringen', 'geuniformeerd'],
         column_types={
             '_last_updated': 'datetime2(6)',
             '_processed_at': 'datetime2(6)'
@@ -29,7 +29,7 @@ with demographics as (
         years_experience,
         last_employer,
         _loaded_at as demographics_loaded_at
-    from {{ ref('bronze_personal_client') }}
+    from {{ ref('brons_persoonlijke_client_data') }}
 ),
 
 benefits as (
@@ -39,15 +39,15 @@ benefits as (
         start_date,
         end_date,
         duration_months,
-        case 
-        when lower(ltrim(rtrim(transition_to_work))) in ('yes','y','true','1') then 1
-        when lower(ltrim(rtrim(transition_to_work))) in ('no','n','false','0') then 0
-        else null
-        end as transition_to_work,
+    case 
+    when lower(ltrim(rtrim(transition_to_work))) in ('ja','j','yes','y','true','waar','1') then 1
+    when lower(ltrim(rtrim(transition_to_work))) in ('nee','n','no','false','onwaar','0') then 0
+    else null
+    end as transition_to_work,
         benefit_amount,
         region as benefit_region,
         _loaded_at as benefits_loaded_at
-    from {{ ref('bronze_benefit_data') }}
+    from {{ ref('brons_uitkerings_data') }}
 )
 
 select
@@ -58,11 +58,11 @@ select
     demographics.age,
     upper(trim(demographics.gender)) as gender,
     case 
-        when lower(demographics.education_level) like '%bachelor%' then 'Bachelor''s Degree'
-        when lower(demographics.education_level) like '%master%' then 'Master''s Degree'
-        when lower(demographics.education_level) like '%phd%' or lower(demographics.education_level) like '%doctorate%' then 'Doctorate'
-        when lower(demographics.education_level) like '%high school%' or lower(demographics.education_level) like '%secondary%' then 'High School'
-        else coalesce(demographics.education_level, 'Unknown')
+        when lower(demographics.education_level) like '%bachelor%' then 'Bachelor'
+        when lower(demographics.education_level) like '%master%' then 'Master'
+        when lower(demographics.education_level) like '%phd%' or lower(demographics.education_level) like '%dr%' then 'Doctoraat'
+        when lower(demographics.education_level) like '%middelbare%' or lower(demographics.education_level) like '%voortgezet%' then 'Middelbare school'
+        else coalesce(demographics.education_level, 'Onbekend')
     end as education_level_standardized,
     upper(trim(demographics.region)) as region,
     upper(trim(demographics.industry)) as industry,
@@ -99,10 +99,10 @@ select
     end as age_group,
     
     case 
-        when demographics.years_experience >= 15 then 'Senior (15+ years)'
-        when demographics.years_experience >= 5 then 'Mid-level (5-14 years)'
-        when demographics.years_experience >= 1 then 'Junior (1-4 years)'
-        else 'Entry level (0 years)'
+        when demographics.years_experience >= 15 then 'Senior (15+ jaar)'
+        when demographics.years_experience >= 5 then 'Medior (5-14 jaar)'
+        when demographics.years_experience >= 1 then 'Junior (1-4 jaar)'
+        else 'Instapniveau (0 jaar)'
     end as experience_level,
     
     -- Metadata

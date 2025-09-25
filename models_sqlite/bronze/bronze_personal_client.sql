@@ -5,8 +5,8 @@
   This layer stores client demographic information as received from the source,
   with minimal processing and added metadata for data lineage.
   
-  Data Source: personal_client_data seed file
-  Next Layer: Silver layer (silver_demographics_benefit)
+  Data Source: persoonlijke_client_data seed file
+  Next Layer: Silver layer (silver_demografie_uitkering)
 */
 
 {{ config(
@@ -31,6 +31,6 @@ select
     -- Data lineage metadata
   -- CAST(SYSDATETIME() AS datetime2(6)) as _loaded_at,
     current_timestamp as _loaded_at,
-    'personal_client_data_seed' as _source_system
+  'persoonlijke_client_data_seed' as _source_system
     
-from {{ ref('personal_client_data') }}
+from {{ ref('persoonlijke_client_data') }}

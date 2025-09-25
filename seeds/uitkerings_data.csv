@@ -1,0 +1,11 @@
+client_id,benefit_type,start_date,end_date,duration_months,transition_to_work,benefit_amount,region
+1,Werkloosheidsuitkering,2023-01-15,2023-07-15,6,Ja,800.00,Noord
+2,Arbeidsongeschiktheidsuitkering,2022-06-01,2024-06-01,24,Nee,1200.00,Zuid
+3,Jobtraining,2023-03-01,2023-09-01,6,Ja,500.00,Oost
+4,Gezondheidszorgondersteuning,2021-01-01,,36,Nee,900.00,West
+5,Loopbaanbegeleiding,2023-05-01,2023-08-01,3,Ja,300.00,Noord
+6,Werkloosheidsuitkering,2023-02-01,2023-11-01,9,Ja,850.00,Zuid
+7,Vaardigheidstraining,2023-04-15,2023-10-15,6,Ja,600.00,Oost
+8,Geestelijke-gezondheidsondersteuning,2022-08-01,2024-08-01,24,Nee,700.00,West
+9,Jobplaatsing,2023-06-01,2023-09-01,3,Ja,400.00,Noord
+10,Werkloosheidsuitkering,2023-03-15,2023-12-15,9,Nee,820.00,Zuid

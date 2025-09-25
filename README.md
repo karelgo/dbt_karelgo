@@ -1,55 +1,54 @@
 dbt test
 dbt docs generate
-_Placeholder: README content being refreshed._
-# dbt MVP Project
+# dbt MVP Project (NL)
 
-Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**, **Databricks (Spark)**, **DuckDB**, and **SQLite**. It analyzes how demographic attributes relate to benefit program participation and transitions back to work.
+Portabele dbt-medallionarchitectuur op **Microsoft Fabric / SQL Server**, **Databricks (Spark)**, **DuckDB** en **SQLite**. Analyses richten zich op de relatie tussen demografische kenmerken, uitkeringsdeelname en terugkeer naar werk.
 
-## Medallion Layers
-### Bronze (Raw Ingestion)
-- `bronze_personal_client` – demographics as received
-- `bronze_benefit_data` – benefit program facts
+## Medallion-lagen
+### Brons (Ruwe broninname)
+- `brons_persoonlijke_client_data` – demografie zoals ontvangen
+- `brons_uitkerings_data` – uitkeringsfeiten
 
-### Silver (Standardization & Unification)
-- `silver_demographics_benefit` – joins bronze tables, normalizes categorical values, derives age & experience bands, computes actual duration, flags data quality.
+### Zilver (Standaardisatie & Unificatie)
+- `silver_demografie_uitkering` – voegt brons samen, normaliseert categorieën, leidt leeftijds- en ervaringsklassen af, berekent werkelijke duur en zet kwaliteitsvlaggen.
 
-### Gold (Analytics)
-- `gold_benefit_analysis` – consolidated analytics across region, benefit type, demographics, and experience.
+### Goud (Analytics)
+- `goud_uitkerings_analysis` – geconsolideerde analyses per regio, regelingstype, demografie en ervaring.
 
-## Key Metrics
-- Recipients & unique clients per region / benefit type
-- Transition success rates (percentage moving back to work)
-- Actual vs reported duration (months)
-- Outcomes segmented by age group, gender, education, experience level, industry
+## Belangrijkste indicatoren
+- Ontvangers en unieke cliënten per regio/regelingstype
+- Succesratio terugkeer naar werk
+- Werkelijke vs gerapporteerde duur (maanden)
+- Segmentatie naar leeftijdsgroep, gender, opleiding, ervaringsniveau, sector
 
-## Structure
-- `models/bronze|silver|gold` – transformation SQL
-- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`
-- `macros/datetime_utils.sql` – cross‑database temporal helpers
+## Structuur
+- `models/bronze|silver|gold` – transformaties
+- `seeds/` – `persoonlijke_client_data.csv`, `uitkerings_data.csv`
+- `macros/datetime_utils.sql` – cross-database tijdshelpers
 - `requirements.txt` – dbt-core + adapters
-- `dbt_project.yml` – tagging & materialization
+- `dbt_project.yml` – tagging & materialisatie
 
-## Cross-Database Macros
-Defined in `macros/datetime_utils.sql` to avoid vendor-specific SQL:
+## Cross-database macros
+Gedefinieerd in `macros/datetime_utils.sql` om vendorspecifieke SQL te vermijden:
 
-| Macro | Purpose | SQL Server / Fabric | Databricks | DuckDB | SQLite |
-|-------|---------|---------------------|------------|--------|--------|
-| `xdb_now()` | Current timestamp | `CAST(SYSDATETIME() AS datetime2(6))` | `current_timestamp()` | `now()` | `CURRENT_TIMESTAMP` |
-| `xdb_month_diff(a,b)` | Whole months between dates | `DATEDIFF(MONTH,a,b)` | `datediff(month,a,b)` | `date_diff('month',a,b)` | `CAST((julianday(b)-julianday(a))/30 AS INTEGER)` |
+| Macro | Doel | SQL Server / Fabric | Databricks | DuckDB | SQLite |
+|-------|------|---------------------|------------|--------|--------|
+| `xdb_now()` | Huidige timestamp | `CAST(SYSDATETIME() AS datetime2(6))` | `current_timestamp()` | `now()` | `CURRENT_TIMESTAMP` |
+| `xdb_month_diff(a,b)` | Volledige maanden tussen data | `DATEDIFF(MONTH,a,b)` | `datediff(month,a,b)` | `date_diff('month',a,b)` | `CAST((julianday(b)-julianday(a))/30 AS INTEGER)` |
 
-All models now use these macros instead of hard-coded functions (`SYSDATETIME`, `DATEDIFF`, etc.).
+Alle modellen gebruiken deze macros i.p.v. hardgecodeerde functies.
 
-### Caveats
-- SQLite month diff is approximate (30-day divisor). For exact boundary logic, use a calendar dimension.
-- `datetime2(6)` down-casts on engines lacking high-precision timestamp types.
-- Keep adapter versions aligned with `dbt-core` to reduce incompatibility risk.
+### Kanttekeningen
+- Maandverschil in SQLite is benadering (deling door 30). Voor exacte grenzen gebruik een kalenderdimensie.
+- `datetime2(6)` wordt gedegradeerd op engines zonder hoge precisie.
+- Houd adapterversies in lijn met `dbt-core` om incompatibiliteit te voorkomen.
 
-## Installation
+## Installatie
 ```bash
 pip install -r requirements.txt
 ```
 
-## Example Multi-Adapter Profile (`~/.dbt/profiles.yml`)
+## Voorbeeld multi-adapterprofiel (`~/.dbt/profiles.yml`)
 ```yaml
 mvp_profile:
 	target: duckdb
@@ -83,7 +82,7 @@ mvp_profile:
 			threads: 4
 ```
 
-## Running
+## Uitvoeren
 ```bash
 dbt seed --target duckdb
 dbt run  --target duckdb
@@ -94,30 +93,37 @@ dbt run --target fabric
 dbt run --target databricks
 ```
 
-Or automatically switch by editing `target:` in the profile.
+Of wijzig `target:` in het profiel.
 
-## Layered Execution (Optional)
+## Documentatie (lokaal)
 ```bash
-dbt seed --target <target>
-dbt run --select tag:bronze  --target <target>
-dbt run --select tag:silver  --target <target>
-dbt run --select tag:gold    --target <target>
+dbt docs generate
+dbt docs serve --port 8080
 ```
 
-## CI/CD (Suggested)
-- Lightweight: Run DuckDB seed/run/test on PR.
-- Full: Scheduled Fabric / Databricks run + docs generation.
+## Gelaagde uitvoering (optioneel)
+```bash
+dbt seed --target <target>
+dbt run --select tag:brons   --target <target>
+dbt run --select tag:zilver  --target <target>
+dbt run --select tag:goud    --target <target>
+```
 
-## Future Enhancements
-- Add SCD Type 2 dimension (snapshots or incremental) for client history.
-- Calendar dimension for precise month computations.
-- Generic & singular tests (unique, accepted values, not null) + exposures.
-- Macro unit tests via ephemeral models.
+## CI/CD (aanbevolen)
+- Lichtgewicht: DuckDB seed/run/test op PR
+- Volledig: Geplande Fabric/Databricks-run + documentatie
 
-## Troubleshooting
-- Missing relation errors: run `dbt seed` first.
-- Permission denied (Fabric/SQL Server): ensure CREATE/ALTER on target schema.
-- Function not found (e.g. SYSDATETIME) indicates a model not yet migrated to macros.
+## Toekomst
+- SCD Type 2-dimensie (snapshots of incrementeel) voor cliëntgeschiedenis
+- Kalenderdimensie voor exacte maandberekeningen
+- Generieke en specifieke tests + exposures/lineage
+- Macrounittests via ephemeral modellen
 
-## License
+## Probleemoplossing
+- Ontbrekende tabellen: voer eerst `dbt seed` uit
+- Rechtenfout (Fabric/SQL Server): zorg voor CREATE/ALTER op schema
+- Functie niet gevonden (bijv. SYSDATETIME): model nog niet gemigreerd naar macro
+
+## Licentie
+Interne/evaluatie-doeleinden (voeg expliciete licentie toe bij externe distributie)
 Internal / evaluation use (add explicit license if distributing externally).

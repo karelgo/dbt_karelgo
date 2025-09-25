@@ -48,10 +48,10 @@ Notes: Keep conceptual; later slides show implementation specifics.
 # 5. Model Inventory (MVP)
 | Layer | Model | Purpose |
 |-------|-------|---------|
-| Bronze | bronze_personal_client | Raw demographics + lineage |
-| Bronze | bronze_benefit_data | Raw benefits + lineage |
-| Silver | silver_demographics_benefit | Unified cleansed dataset |
-| Gold | gold_benefit_analysis | Multi-dimensional aggregates |
+| Bronze | brons_persoonlijke_client_data | Raw demographics + lineage |
+| Bronze | brons_uitkerings_data | Raw benefits + lineage |
+| Silver | silver_demografie_uitkering | Unified cleansed dataset |
+| Gold | goud_uitkerings_analysis | Multi-dimensional aggregates |
 
 Notes: Intentional minimal surface to emphasize pattern.
 
@@ -158,7 +158,7 @@ open silver model (highlight macros)
 dbt seed --target duckdb
 dbt run --select tag:gold --target duckdb
 dbt test --target duckdb
-dbt run --target sqlite --select gold_benefit_analysis
+dbt run --target sqlite --select goud_uitkerings_analysis
 show sample rows
 ```
 Fallback: screenshots if network issues.

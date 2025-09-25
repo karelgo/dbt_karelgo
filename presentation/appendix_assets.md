@@ -79,10 +79,10 @@ dbt run --select tag:gold --target duckdb
 dbt test --target duckdb
 
 # 4. Switch engine
-dbt run --target sqlite --select gold_benefit_analysis
+dbt run --target sqlite --select goud_uitkerings_analysis
 
 # 5. Sample output (DuckDB CLI or Python)
-duckdb -c "select * from gold_benefit_analysis limit 5;"
+duckdb -c "select * from goud_uitkerings_analysis limit 5;"
 ```
 
 ## 4. Anticipated Q&A (Expanded)

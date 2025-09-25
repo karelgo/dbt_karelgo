@@ -2,7 +2,7 @@ version: 2
 
 models:
   # Bronze Layer Models
-  - name: bronze_personal_client
+  - name: brons_persoonlijke_client_data
     description: "Raw personal demographics data with data lineage metadata"
     columns:
       - name: client_id
@@ -39,7 +39,7 @@ models:
         tests:
           - not_null
 
-  - name: bronze_benefit_data
+  - name: brons_uitkerings_data
     description: "Raw benefit program data with data lineage metadata"
     columns:
       - name: client_id
@@ -76,7 +76,7 @@ models:
           - not_null
 
   # Silver Layer Models
-  - name: silver_demographics_benefit
+  - name: silver_demografie_uitkering
     description: "Unified demographics and benefit data with cleansing and standardization"
     columns:
       - name: client_id
@@ -136,7 +136,7 @@ models:
         description: "Data quality flag for questionable age values"
 
   # Gold Layer Models
-  - name: gold_benefit_analysis
+  - name: goud_uitkerings_analysis
     description: "Aggregated analytics for benefit program effectiveness and demographics analysis"
     columns:
       - name: analysis_type
