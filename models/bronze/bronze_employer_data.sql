@@ -5,7 +5,7 @@
   that have employees receiving unemployment benefits, their characteristics, and 
   reintegration partnerships.
   
-  Data Source: _employer_data seed file
+  Data Source: employer_data seed file
   Next Layer: Silver layer (silver_claims_analysis)
   
   Context: This data helps analyze patterns in unemployment by employer characteristics
@@ -42,6 +42,6 @@ select
     
     -- Data lineage metadata
     {{ xdb_now() }} as _loaded_at,
-    '_employer_data_seed' as _source_system
+    'employer_data_seed' as _source_system
     
-from {{ ref('_employer_data') }}
+from {{ ref('employer_data') }}

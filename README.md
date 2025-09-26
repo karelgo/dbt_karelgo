@@ -47,7 +47,7 @@ Analyzes demographic patterns in benefit program participation and work transiti
 
 ## Structure
 - `models/bronze|silver|gold` – transformation SQL
-- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`, `_ww_claims.csv`, `_employer_data.csv`
+- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`, `ww_claims.csv`, `employer_data.csv`
 - `macros/datetime_utils.sql` – cross‑database temporal helpers
 - `docs/` – use case documentation including detailed  analytics guide
 - `requirements.txt` – dbt-core + adapters
