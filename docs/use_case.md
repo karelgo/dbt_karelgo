@@ -56,7 +56,7 @@ This analytics solution enables  to:
 
 ### Core Entities
 
-#### WW Claims (`_ww_claims.csv`)
+#### WW Claims (`ww_claims.csv`)
 ```csv
 claim_id,bsn,age,gender,education_level,municipality,province,industry_sector,
 job_title,salary_before_unemployment,claim_start_date,claim_end_date,
@@ -64,7 +64,7 @@ benefit_duration_weeks,benefit_amount_weekly,reintegration_program,
 job_found_date,employer_before,employer_after,claim_reason
 ```
 
-#### Employer Data (`_employer_data.csv`)
+#### Employer Data (`employer_data.csv`)
 ```csv
 employer_id,employer_name,kvk_number,industry_sector,province,municipality,
 employee_count,annual_layoffs_2024,reintegration_partnerships
