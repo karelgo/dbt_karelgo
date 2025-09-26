@@ -7,12 +7,12 @@ Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**
 ### 1. General Benefit Analysis
 Analyzes demographic patterns in benefit program participation and work transition success rates across different regions and benefit types.
 
-### 2.  (Dutch Unemployment Insurance) Analytics
-**NEW**: Comprehensive analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from  (Uitvoeringsinstituut Werknemersverzekeringen). This use case provides specialized analytics for:
+### 2.  ( Unemployment Insurance) Analytics
+**NEW**: Comprehensive analysis of a unemployment insurance (WW - Werkloosheidswet) data. This use case provides specialized analytics for:
 - Reintegration program effectiveness
 - Provincial unemployment patterns  
 - Employer characteristics and partnership impact
-- Dutch-specific education level and geographic analysis
+- -specific education level and geographic analysis
 
 📋 **[View detailed  use case documentation](docs/_use_case.md)**
 
@@ -20,12 +20,12 @@ Analyzes demographic patterns in benefit program participation and work transiti
 ### Bronze (Raw Ingestion)
 - `bronze_personal_client` – demographics as received
 - `bronze_benefit_data` – benefit program facts  
-- `bronze_ww_claims` –  unemployment insurance claims (Dutch WW data)
+- `bronze_ww_claims` –  unemployment insurance claims ( WW data)
 - `bronze_employer_data` –  employer characteristics and partnerships
 
 ### Silver (Standardization & Unification)
 - `silver_demographics_benefit` – joins bronze tables, normalizes categorical values, derives age & experience bands, computes actual duration, flags data quality.
-- `silver_claims_analysis` – unified  claims with employer data, Dutch education standardization, reintegration analytics
+- `silver_claims_analysis` – unified  claims with employer data,  education standardization, reintegration analytics
 
 ### Gold (Analytics)
 - `gold_benefit_analysis` – consolidated analytics across region, benefit type, demographics, and experience.
@@ -41,7 +41,7 @@ Analyzes demographic patterns in benefit program participation and work transiti
 ### -Specific Metrics  
 - WW claim reintegration success rates by province and industry
 - Employer partnership effectiveness analysis
-- Dutch education level impact on employment outcomes
+-  education level impact on employment outcomes
 - Benefit duration vs. salary bracket correlations
 - Regional unemployment pattern analysis
 
