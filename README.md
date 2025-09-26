@@ -1,31 +1,55 @@
-dbt test
-dbt docs generate
-_Placeholder: README content being refreshed._
 # dbt MVP Project
 
 Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**, **Databricks (Spark)**, **DuckDB**, and **SQLite**. It analyzes how demographic attributes relate to benefit program participation and transitions back to work.
 
+## Use Cases
+
+### 1. General Benefit Analysis
+Analyzes demographic patterns in benefit program participation and work transition success rates across different regions and benefit types.
+
+### 2.  (Dutch Unemployment Insurance) Analytics
+**NEW**: Comprehensive analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from  (Uitvoeringsinstituut Werknemersverzekeringen). This use case provides specialized analytics for:
+- Reintegration program effectiveness
+- Provincial unemployment patterns  
+- Employer characteristics and partnership impact
+- Dutch-specific education level and geographic analysis
+
+📋 **[View detailed  use case documentation](docs/_use_case.md)**
+
 ## Medallion Layers
 ### Bronze (Raw Ingestion)
 - `bronze_personal_client` – demographics as received
-- `bronze_benefit_data` – benefit program facts
+- `bronze_benefit_data` – benefit program facts  
+- `bronze_ww_claims` –  unemployment insurance claims (Dutch WW data)
+- `bronze_employer_data` –  employer characteristics and partnerships
 
 ### Silver (Standardization & Unification)
 - `silver_demographics_benefit` – joins bronze tables, normalizes categorical values, derives age & experience bands, computes actual duration, flags data quality.
+- `silver_claims_analysis` – unified  claims with employer data, Dutch education standardization, reintegration analytics
 
 ### Gold (Analytics)
 - `gold_benefit_analysis` – consolidated analytics across region, benefit type, demographics, and experience.
+- `gold_analytics` –  executive dashboard metrics for policy analysis and reintegration program evaluation
 
 ## Key Metrics
+### General Benefit Analysis
 - Recipients & unique clients per region / benefit type
 - Transition success rates (percentage moving back to work)
 - Actual vs reported duration (months)
 - Outcomes segmented by age group, gender, education, experience level, industry
 
+### -Specific Metrics  
+- WW claim reintegration success rates by province and industry
+- Employer partnership effectiveness analysis
+- Dutch education level impact on employment outcomes
+- Benefit duration vs. salary bracket correlations
+- Regional unemployment pattern analysis
+
 ## Structure
 - `models/bronze|silver|gold` – transformation SQL
-- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`
+- `seeds/` – `personal_client_data.csv`, `benefit_data.csv`, `_ww_claims.csv`, `_employer_data.csv`
 - `macros/datetime_utils.sql` – cross‑database temporal helpers
+- `docs/` – use case documentation including detailed  analytics guide
 - `requirements.txt` – dbt-core + adapters
 - `dbt_project.yml` – tagging & materialization
 
@@ -85,10 +109,16 @@ mvp_profile:
 
 ## Running
 ```bash
+# Run all models
 dbt seed --target duckdb
 dbt run  --target duckdb
 dbt test --target duckdb
 
+# Run specific use cases
+dbt run --select +gold_benefit_analysis      # General benefit analysis
+dbt run --select +gold_analytics         #  unemployment insurance analysis
+
+# Cross-platform execution
 dbt run --target sqlite
 dbt run --target fabric
 dbt run --target databricks
@@ -102,6 +132,11 @@ dbt seed --target <target>
 dbt run --select tag:bronze  --target <target>
 dbt run --select tag:silver  --target <target>
 dbt run --select tag:gold    --target <target>
+
+# -specific execution
+dbt run --select tag: tag:bronze   --target <target>
+dbt run --select tag: tag:silver   --target <target>  
+dbt run --select tag: tag:gold     --target <target>
 ```
 
 ## CI/CD (Suggested)
