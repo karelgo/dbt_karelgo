@@ -1,13 +1,13 @@
-#  Use Case: Dutch Unemployment Insurance Analytics
+#  Use Case: Unemployment Insurance Analytics
 
 ## Overview
 
-This use case demonstrates the analysis of Dutch unemployment insurance (WW - Werkloosheidswet) data from  (Uitvoeringsinstituut Werknemersverzekeringen), the Dutch Employee Insurance Agency. The implementation follows the existing medallion architecture (Bronze → Silver → Gold) to provide comprehensive insights into unemployment patterns, reintegration program effectiveness, and policy outcomes.
+This use case demonstrates the analysis of a dummy unemployment insurance (WW - Werkloosheidswet) data. The implementation follows the existing medallion architecture (Bronze → Silver → Gold) to provide comprehensive insights into unemployment patterns, reintegration program effectiveness, and policy outcomes.
 
 ## Business Context
 
 ### About 
- is the Dutch government agency responsible for:
+ This Dummy insurance agency is responsible for:
 - Managing unemployment insurance (WW - Werkloosheidswet)
 - Providing disability benefits (WIA/WAO)
 - Supporting job seekers and employers
@@ -27,7 +27,7 @@ This analytics solution enables  to:
 ### Medallion Architecture Implementation
 
 #### Bronze Layer (Raw Data Ingestion)
-- **`bronze_ww_claims`**: Raw WW claims data with Dutch-specific fields
+- **`bronze_ww_claims`**: Raw WW claims data
 - **`bronze_employer_data`**: Raw employer characteristics and partnership information
 
 #### Silver Layer (Data Transformation & Unification)
@@ -39,11 +39,11 @@ This analytics solution enables  to:
 ## Key Features
 
 ### Dutch-Specific Data Elements
-- **BSN (Burgerservicenummer)**: Dutch social security numbers for unique citizen identification
+- **BSN (Burgerservicenummer)**: Social security numbers for unique citizen identification
 - **Education Levels**: WO (University), HBO (Applied Sciences), MBO (Vocational), VMBO (Pre-vocational)
-- **Geographic Hierarchy**: Dutch provinces and municipalities
+- **Geographic Hierarchy**: Provinces and municipalities
 - **KvK Numbers**: Chamber of Commerce registration numbers for employers
-- **Industry Classifications**: Aligned with Dutch labor market sectors
+- **Industry Classifications**: Aligned with labor market sectors
 
 ### Analytics Capabilities
 - **Reintegration Success Analysis**: Track job placement rates by demographics and programs
@@ -137,7 +137,7 @@ ORDER BY success_rate_pct DESC;
 ### Execution Steps
 ```bash
 # 1. Seed the  data
-dbt seed --select _ww_claims _employer_data
+dbt seed --select ww_claims employer_data
 
 # 2. Run Bronze layer (data ingestion)
 dbt run --select tag: tag:bronze
@@ -230,19 +230,18 @@ The  models use the existing cross-database macros:
 
 ## Compliance & Privacy
 
-### Dutch Data Protection
-- BSN handling follows Dutch privacy regulations (AVG/GDPR)
+### Data Protection
+- BSN handling follows privacy regulations (AVG/GDPR)
 - Anonymization strategies for public reporting
 - Secure data processing pipelines
 - Audit trails for data lineage
 
 ### Reporting Standards
 - Alignment with  annual reporting requirements
-- Integration with Dutch government data standards
-- Support for CBS (Statistics Netherlands) data sharing protocols
+- Integration with government data standards
 
 ## Conclusion
 
 The  use case demonstrates how modern data analytics can support evidence-based policy making in social security systems. By leveraging the medallion architecture, this solution provides scalable, maintainable, and insightful analysis of unemployment insurance effectiveness, supporting 's mission to help Dutch citizens transition back to meaningful employment.
 
-The implementation showcases Dutch-specific data handling while maintaining compatibility with multiple database platforms, making it a robust foundation for national employment policy analysis and program optimization.
+The implementation showcases data handling while maintaining compatibility with multiple database platforms, making it a robust foundation for national employment policy analysis and program optimization.
