@@ -1,4 +1,4 @@
-# dbt MVP Project
+# Data Build Tool (DBT) - Medallion Architecture - MVP Project
 
 Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**, **Databricks (Spark)**, **DuckDB**, and **SQLite**. It analyzes how demographic attributes relate to benefit program participation and transitions back to work.
 
