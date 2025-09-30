@@ -7,14 +7,14 @@ Portable dbt medallion architecture running on **Microsoft Fabric / SQL Server**
 ### 1. General Benefit Analysis
 Analyzes demographic patterns in benefit program participation and work transition success rates across different regions and benefit types.
 
-### 2.  ( Unemployment Insurance) Analytics
+### 2.  (Unemployment Insurance) Analytics
 **NEW**: Comprehensive analysis of a unemployment insurance (WW - Werkloosheidswet) data. This use case provides specialized analytics for:
 - Reintegration program effectiveness
 - Provincial unemployment patterns  
 - Employer characteristics and partnership impact
 - -specific education level and geographic analysis
 
-📋 **[View detailed  use case documentation](docs/_use_case.md)**
+📋 **[View detailed  use case documentation](docs/use_case.md)**
 
 ## Medallion Layers
 ### Bronze (Raw Ingestion)
@@ -41,7 +41,7 @@ Analyzes demographic patterns in benefit program participation and work transiti
 ### -Specific Metrics  
 - WW claim reintegration success rates by province and industry
 - Employer partnership effectiveness analysis
--  education level impact on employment outcomes
+- Education level impact on employment outcomes
 - Benefit duration vs. salary bracket correlations
 - Regional unemployment pattern analysis
 
